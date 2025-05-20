@@ -25,25 +25,11 @@ export default function Home() {
     const numberOfStars = 500;
     const stars: Star[] = [];
 
-    let mouseX = centerX;
-    let mouseY = centerY;
-    let isMouseMoving = false;
-    let mouseTimer: NodeJS.Timeout;
+   
 
     let currentSpeedMultiplier = 1;
-    let targetSpeedMultiplier = 1;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      isMouseMoving = true;
-      clearTimeout(mouseTimer);
-      mouseTimer = setTimeout(() => {
-        isMouseMoving = false;
-      }, 100);
-    };
 
-    window.addEventListener("mousemove", handleMouseMove);
 
     const frames_per_second = 360;
     const interval = Math.floor(1000 / frames_per_second);
@@ -88,14 +74,7 @@ export default function Home() {
         }
 
         // Interaction
-        if (isMouseMoving || hovering) {
-          const mouseXRelative = mouseX - centerX;
-          const mouseYRelative = mouseY - centerY;
-          const distX = mouseXRelative - this.x;
-          const distY = mouseYRelative - this.y;
-          const distance = Math.sqrt(distX * distX + distY * distY);
-        }
-
+       
         // Always gradually return to original position
         this.x += (this.originalX - this.x) * 0.05;
         this.y += (this.originalY - this.y) * 0.05;
@@ -153,7 +132,6 @@ export default function Home() {
         ctx.translate(centerX, centerY);
 
         // Smoothly transition speed
-        targetSpeedMultiplier = hovering ? 4 : 0.1;
         if (hovering) {
           currentSpeedMultiplier = 40;
         }
@@ -188,8 +166,7 @@ export default function Home() {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-      window.removeEventListener("mousemove", handleMouseMove);
-      clearTimeout(mouseTimer);
+   
     };
   }, [hovering]);
 
