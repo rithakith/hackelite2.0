@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 interface TimeLeft {
   days: number;
@@ -9,7 +9,7 @@ interface TimeLeft {
 }
 
 const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
-  const calculateTimeLeft = (): TimeLeft | null => {
+  const calculateTimeLeft = useCallback((): TimeLeft | null => {
     const difference = +new Date(targetDate) - +new Date();
     if (difference <= 0) {
       return null;
@@ -21,19 +21,18 @@ const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
     };
-  };
+  }, [targetDate]);
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(
     calculateTimeLeft()
   );
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   if (!timeLeft) {
     return (

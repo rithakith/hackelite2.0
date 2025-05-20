@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AuroraBackground from "@/components/AuroraBackground";
 import { HoverProvider } from "@/context/HoverContext";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,8 @@ export default function RootLayout({
         <HoverProvider>
           <div className="relative min-h-screen w-full overflow-hidden">
             <AuroraBackground />
-            <main className="relative z-10">{children}</main>
+            <Navbar />
+            <main className="relative z-10 pt-20">{children}</main>
           </div>
         </HoverProvider>
       </body>

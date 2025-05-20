@@ -1,37 +1,6 @@
 "use client";
-import { useState } from "react";
-
-interface Phase {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-}
-
-const phases: Phase[] = [
-  {
-    id: 1,
-    title: "Proposal",
-    description: "Submit your innovative project proposal and initial concept",
-    date: "Phase 1",
-  },
-  {
-    id: 2,
-    title: "Minimum Viable Product",
-    description: "Develop and demonstrate your working prototype",
-    date: "Phase 2",
-  },
-  {
-    id: 3,
-    title: "Pitching",
-    description: "Present your final project to judges and stakeholders",
-    date: "Phase 3",
-  },
-];
 
 const PhasesSection = () => {
-  const [activePhase, setActivePhase] = useState(1);
-
   return (
     <section className="w-full min-h-[60vh] flex flex-col items-center justify-center py-20 px-4">
       <div className="max-w-6xl w-full">
@@ -88,7 +57,7 @@ const PhasesSection = () => {
             </p>
             <ul className="list-disc list-inside text-white/80 space-y-2 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
               <li>Prepare your presentation and demo</li>
-              <li>Highlight your project's impact and innovation</li>
+              <li>Highlight your project&apos;s impact and innovation</li>
               <li>Showcase your technical implementation</li>
               <li>Present your future development roadmap</li>
             </ul>

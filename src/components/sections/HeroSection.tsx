@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-12">
         <div className="flex flex-col items-center space-y-6">
           <h1 className="text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center">
-            HackElite 2.0
+            Hackelite 2.0
           </h1>
           <p className="text-white text-xl text-center max-w-2xl mx-auto opacity-90">
             Unleash your potential at the ultimate competitive coding arena

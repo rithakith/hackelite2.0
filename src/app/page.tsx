@@ -20,9 +20,11 @@ export default function Home() {
       <PhasesSection />
       <StatsSection />
       <TimelineSection />
-      <TeamSection />
+            <GallerySection />
+
       <FAQSection />
-      <GallerySection />
+            <TeamSection />
+
       <Footer />
     </div>
   );

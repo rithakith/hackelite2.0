@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 
 import { useHover } from "@/context/HoverContext";
 
