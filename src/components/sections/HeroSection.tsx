@@ -1,22 +1,33 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useHover } from "@/context/HoverContext";
 
 export default function HeroSection() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const { setIsHovering } = useHover();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="relative">
+      {" "}
       {/* Logo in top left */}
-      <div className="fixed top-8 left-8 z-10">
+      <div className="fixed top-4 left-8 z-[200]">
         <img
           src="/hackelite_logo.png"
           alt="HackElite Logo"
           className="w-48 h-auto"
         />
       </div>
-
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-12">
         <div className="flex flex-col items-center space-y-6">

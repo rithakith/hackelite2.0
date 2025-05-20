@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -17,74 +16,67 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "backdrop-blur-lg bg-black/20 border-b border-white/10"
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+        isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 py-4">
+      <div className="relative max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="relative h-10 w-32">
-            <Image
-              src="/hackelite_logo.png"
-              alt="HackElite 2.0"
-              fill
-              className="object-contain"
-            />
-          </Link>
+          {/* Empty div for left spacing to match logo */}
+          <div className="w-48"></div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-6">
-            <Link
-              href="/#about"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="/#timeline"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              Timeline
-            </Link>
-            <Link
-              href="/#phases"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              Phases
-            </Link>
-            <Link
-              href="/#stats"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              Stats
-            </Link>
-            <Link
-              href="/#team"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              Team
-            </Link>
-            <Link
-              href="/#gallery"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              Gallery
-            </Link>
-            <Link
-              href="/#faq"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              FAQ
-            </Link>
+          {/* Center Navigation Links with glassmorphism */}
+          <div className="hidden md:block px-8 py-4 mt-4 rounded-full backdrop-blur-md bg-black/20 border border-white/10">
+            <div className="flex items-center gap-6">
+              <Link
+                href="/#about"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                href="/#timeline"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Timeline
+              </Link>
+              <Link
+                href="/#phases"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Phases
+              </Link>
+              <Link
+                href="/#stats"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Stats
+              </Link>
+              <Link
+                href="/#team"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Team
+              </Link>
+              <Link
+                href="/#gallery"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Gallery
+              </Link>
+              <Link
+                href="/#faq"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                FAQ
+              </Link>
+            </div>
           </div>
 
-          {/* Register Button */}
+          {/* Register Button aligned to right */}
           <Link
             href="/#register"
-            className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 transition-all duration-300"
+            className="px-6 py-2 mt-4 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 transition-all duration-300"
           >
             Register Now
           </Link>
