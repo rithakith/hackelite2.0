@@ -1,21 +1,10 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { useHover } from "@/context/HoverContext";
 
 export default function HeroSection() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const { setIsHovering } = useHover();
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="relative">
