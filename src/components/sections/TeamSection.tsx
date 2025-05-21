@@ -32,30 +32,30 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Emily Watson",
+    name: "Madhuwantha Dissanayaka",
     title: "Hackelite 2.0 Project Co-chairperson",
     image: "/team/madhuwantha.png", // You'll need to add team member images
-    linkedin: "https://linkedin.com/in/emilywatson",
-    email: "emily.w@hackelite.com",
-    contact: "+1 (555) 456-7890",
+    linkedin: "https://www.linkedin.com/in/madhuwantha-dissanayaka-69a5732a5/",
+    email: "madhudissa07@gmail.com",
+    contact: "+94 76 467 8547",
   },
   {
     id: 5,
-    name: "David Kim",
+    name: "Chathuni Karunarathne ",
     title: "Hackelite 2.0 Project Co-chairperson",
-    image: "/team/member.png", // You'll need to add team member images
-    linkedin: "https://linkedin.com/in/davidkim",
-    email: "david.kim@hackelite.com",
-    contact: "+1 (555) 567-8901",
+    image: "/team/chathuni.png", // You'll need to add team member images
+    linkedin: "https://www.linkedin.com/in/chathuni-karunarathne-162345275/",
+    email: "chathunik27@gmail.com",
+    contact: "+94 76 213 2822",
   },
   {
     id: 6,
-    name: "Lisa Thompson",
+    name: "Gimhani Jayamanna",
     title: "Hackelite 2.0 Project Co-chairperson",
     image: "/team/member.png", // You'll need to add team member images
-    linkedin: "https://linkedin.com/in/lisathompson",
-    email: "lisa.t@hackelite.com",
-    contact: "+1 (555) 678-9012",
+    linkedin: "https://www.linkedin.com/in/gimhani-jayamanna-41695a276/",
+    email: "pabasarajayamanna@gmail.com",
+    contact: "+94 77 785 9638",
   },
 ];
 

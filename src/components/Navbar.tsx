@@ -3,32 +3,26 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
+      className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300
+      lg:bg-transparent lg:backdrop-blur-none
+      backdrop-blur-lg bg-black/60 border-b border-white/10 lg:border-none"
     >
-      <div className="relative max-w-7xl mx-auto px-4 py-4">
+      <div className="relative w-full lg:max-w-8xl mx-auto px-4 lg:py-8 py-4">
         <div className="flex items-center justify-between">
-          {/* Empty div for left spacing to match logo */}
-          <div className="w-48"></div>
-
+          {/* Logo */}
+          <div className="flex items-center lg:h-12 h-8">
+            <img
+              src="/hackelite_logo.png"
+              alt="HackElite Logo"
+              className="lg:w-48 w-28 h-auto"
+            />
+          </div>
           {/* Center Navigation Links with glassmorphism */}
-          <div className="hidden md:block px-8 py-4 mt-4 rounded-full backdrop-blur-md bg-black/60 border border-white/10">
+          <div className="hidden md:block px-8 py-4 rounded-full backdrop-blur-md bg-black/60 border border-white/10">
             <div className="flex items-center gap-6">
-               <Link
+              <Link
                 href="/#about"
                 className="text-white/80 hover:text-white transition-colors"
               >
@@ -53,8 +47,7 @@ const Navbar = () => {
               >
                 Timeline
               </Link>
-             
-              
+
               <Link
                 href="/#gallery"
                 className="text-white/80 hover:text-white transition-colors"
@@ -74,18 +67,16 @@ const Navbar = () => {
                 Team
               </Link>
             </div>
-          </div>
-
+          </div>{" "}
           {/* Register Button aligned to right */}
           <Link
             href="/#register"
-            className="px-6 py-2 mt-4 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 transition-all duration-300"
+            className="lg:px-6 px-4 text-center lg:text-lg text-sm py-2 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 transition-all duration-300"
           >
             Register Now
           </Link>
-
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white p-2">
+          <button className="hidden text-white p-2">
             <svg
               className="w-6 h-6"
               fill="none"

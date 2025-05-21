@@ -28,7 +28,7 @@ export default function AuroraBackground() {
 
     let currentSpeedMultiplier = 1;
 
-    const frames_per_second = 360;
+    const frames_per_second = 60;
     const interval = Math.floor(1000 / frames_per_second);
     let previousTime = performance.now();
 

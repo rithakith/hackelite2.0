@@ -8,19 +8,10 @@ export default function HeroSection() {
 
   return (
     <div className="relative">
-      {" "}
-      {/* Logo in top left */}
-      <div className="fixed top-4 left-8 z-[200]">
-        <img
-          src="/hackelite_logo.png"
-          alt="HackElite Logo"
-          className="w-48 h-auto"
-        />
-      </div>
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen  gap-8">
-        <div className="flex flex-col items-center space-y-6">
-          <h1 className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center">
+      <div className="relative z-10 flex flex-col  items-center justify-center lg:min-h-screen py-24 gap-8">
+        <div className="flex flex-col items-center pace-y-6">
+          <h1 className="lg:text-8xl text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center">
             Hackelite 2.0
           </h1>
           <p className="text-white text-xl text-center max-w-2xl mx-auto opacity-90">
