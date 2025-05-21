@@ -15,8 +15,9 @@ export default function Home() {
   return (
     <div className="relative">
       <HeroSection />
+            <CountdownTimer targetDate={registrationDeadline} />
+
       <AboutSection />
-      <CountdownTimer targetDate={registrationDeadline} />
       <PhasesSection />
       <StatsSection />
       <TimelineSection />

@@ -28,7 +28,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-2 items-center">
+            <ul className="space-y-2 items-center lg:grid-cols-none grid-cols-4 grid">
               <li>
                 <Link
                   href="#about"

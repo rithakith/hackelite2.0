@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 
 const firstRow = [
@@ -45,16 +45,104 @@ const secondRow = [
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const allImages = [...firstRow, ...secondRow];
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % allImages.length);
+  }, [allImages.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + allImages.length) % allImages.length);
+  }, [allImages.length]);
 
   return (
     <section className="w-full min-h-[60vh] flex flex-col items-center justify-center py-20 px-4">
       <div className="max-w-6xl w-full">
         <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12">
           Event Gallery
-        </h2>{" "}
-        <div className="space-y-6">
+        </h2>
+
+        {/* Mobile Carousel */}
+        <div className="md:hidden relative">
+          <div className="overflow-hidden rounded-xl relative aspect-square">
+            <div
+              key={allImages[currentSlide].id}
+              className="relative w-full h-full"
+            >
+              <Image
+                src={allImages[currentSlide].src}
+                alt={allImages[currentSlide].alt}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+
+            {/* Carousel Controls */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors z-10"
+              aria-label="Previous image"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full backdrop-blur-sm hover:bg-black/70 transition-colors z-10"
+              aria-label="Next image"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Slide Indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            {allImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  currentSlide === index
+                    ? "bg-[#b146e4]"
+                    : "bg-white/30 hover:bg-white/50"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Grid Layout */}
+        <div className="hidden md:block space-y-6">
           {/* First row - 4 images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {firstRow.map((image) => (
               <div
                 key={image.id}
@@ -79,7 +167,7 @@ const GallerySection = () => {
           </div>
 
           {/* Second row - 3 centered images */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
             {secondRow.map((image) => (
               <div
                 key={image.id}

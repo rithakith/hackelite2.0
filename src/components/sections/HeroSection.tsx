@@ -10,7 +10,7 @@ export default function HeroSection() {
     <div className="relative">
       {/* Main content */}
       <div className="relative z-10 flex flex-col  items-center justify-center lg:min-h-screen py-24 gap-8">
-        <div className="flex flex-col items-center pace-y-6">
+        <div className="flex flex-col items-center space-y-6">
           <h1 className="lg:text-8xl text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center">
             Hackelite 2.0
           </h1>
@@ -19,14 +19,14 @@ export default function HeroSection() {
           </p>
         </div>
 
-        <div className="flex flex-row gap-6 items-center">
+        <div className="flex flex-row gap-2 lg:gap-6 items-center">
           {/* Register Button with star animation */}
           <button
             ref={buttonRef}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
-            className="px-10 py-3 bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] 
-                     text-white font-bold text-xl rounded-full 
+            className="lg:px-10 px-4   py-3 bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] 
+                     text-white font-bold text-sm lg:text-xl lg:rounded-full rounded-full
                      hover:scale-105 transition-all duration-300 
                      shadow-lg 
                      border border-opacity-20 border-white backdrop-blur-sm"
@@ -37,8 +37,8 @@ export default function HeroSection() {
 
           {/* Delegate Booklet Button - different style */}
           <button
-            className="px-10 py-3 bg-transparent border-2 border-white
-                     text-white font-bold text-xl rounded-full 
+            className="lg:px-10 px-4 py-3 bg-transparent border-2 border-white
+                     text-white font-bold text-sm lg:text-xl rounded-full 
                      hover:bg-white hover:text-black transition-all duration-300
                      shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
             onClick={() => (window.location.href = "/delegate-booklet")}
