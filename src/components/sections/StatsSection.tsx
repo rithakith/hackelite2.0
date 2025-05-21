@@ -27,14 +27,14 @@ const StatsSection = () => {
       <div className="max-w-3xl w-full ">
         <div className="space-y-8">
           {" "}
-          <div className="flex items-center justify-between lg:gap-4 gap-0  backdrop-blur-md rounded-xl border border-white/10 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 p-4 lg:p-8">
+          <div className="flex items-center justify-between lg:gap-4 gap  backdrop-blur-md rounded-xl border border-white/10 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 p-4 lg:p-8">
             {stats.map((stat, index) => (
               <div key={stat.id} className="flex-1 relative text-center px-2">
                 <div className="space-y-2">
                   <span className="block text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
                     {stat.value}
                   </span>
-                  <h3 className="text-sm sm:text-lg lg:text-xl font-semibold text-white">
+                  <h3 className="text-xs sm:text-lg lg:text-xl font-semibold text-white">
                     {stat.title}
                   </h3>
                   <p className="text-xs sm:text-sm lg:text-base text-white/80">
