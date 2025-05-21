@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-20 border-t border-white/10 backdrop-blur-md bg-gradient-to-b from-black/50 to-black/80">
-      <div className="max-w-6xl mx-auto px-4 py-12">
+    <footer className="w-full mt-20 border-t border-white/10 backdrop-blur-md bg-black/60">
+      <div className="max-w-7xl mx-auto px-4 py-12 ">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="relative h-12 w-40">
+            <div className="relative h-24 w-80">
               <Image
                 src="/hackelite_logo.png"
                 alt="HackElite 2.0"
@@ -18,18 +18,17 @@ const Footer = () => {
                 className="object-contain"
               />
             </div>
-            <p className="text-white/60 text-sm">
+            <p className="text-white/60 text-sm text-center">
               Transform your ideas into reality at the most innovative hackathon
               of the year.
             </p>
           </div>
-
           {/* Quick Links */}
-          <div>
+          <div className="text-center">
             <h3 className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 items-center">
               <li>
                 <Link
                   href="#about"
@@ -63,16 +62,15 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-
+          </div>{" "}
           {/* Contact Info */}
-          <div>
+          <div className="text-center">
             <h3 className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4">
               Contact Us
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 flex flex-col items-center">
               <li className="text-white/60">
-                <span className="flex items-center gap-2">
+                <span className="flex items-center justify-center gap-2">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -95,7 +93,7 @@ const Footer = () => {
                 </span>
               </li>
               <li className="text-white/60">
-                <span className="flex items-center gap-2">
+                <span className="flex items-center justify-center gap-2">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -114,13 +112,13 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           {/* Social Links */}
-          <div>
+          <div className="text-center">
+            {" "}
             <h3 className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4">
               Follow Us
             </h3>
-            <div className="flex gap-4">
+            <div className="flex justify-center items-center gap-4">
               <a
                 href="https://twitter.com/hackelite"
                 target="_blank"
@@ -168,26 +166,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/40 text-sm">
+        <div className="pt-8 border-t border-white/10 ">
+            <p className="text-white/40 text-sm text-center">
               © 2025 HackElite 2.0. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <Link
-                href="/privacy"
-                className="text-white/40 hover:text-[#b146e4] text-sm transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-white/40 hover:text-[#b146e4] text-sm transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+          
+          
         </div>
       </div>
     </footer>

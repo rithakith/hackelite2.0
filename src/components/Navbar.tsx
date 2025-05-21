@@ -26,20 +26,21 @@ const Navbar = () => {
           <div className="w-48"></div>
 
           {/* Center Navigation Links with glassmorphism */}
-          <div className="hidden md:block px-8 py-4 mt-4 rounded-full backdrop-blur-md bg-black/20 border border-white/10">
+          <div className="hidden md:block px-8 py-4 mt-4 rounded-full backdrop-blur-md bg-black/60 border border-white/10">
             <div className="flex items-center gap-6">
+               <Link
+                href="/#about"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Home
+              </Link>
               <Link
                 href="/#about"
                 className="text-white/80 hover:text-white transition-colors"
               >
                 About
               </Link>
-              <Link
-                href="/#timeline"
-                className="text-white/80 hover:text-white transition-colors"
-              >
-                Timeline
-              </Link>
+
               <Link
                 href="/#phases"
                 className="text-white/80 hover:text-white transition-colors"
@@ -47,17 +48,13 @@ const Navbar = () => {
                 Phases
               </Link>
               <Link
-                href="/#stats"
+                href="/#timeline"
                 className="text-white/80 hover:text-white transition-colors"
               >
-                Stats
+                Timeline
               </Link>
-              <Link
-                href="/#team"
-                className="text-white/80 hover:text-white transition-colors"
-              >
-                Team
-              </Link>
+             
+              
               <Link
                 href="/#gallery"
                 className="text-white/80 hover:text-white transition-colors"
@@ -69,6 +66,12 @@ const Navbar = () => {
                 className="text-white/80 hover:text-white transition-colors"
               >
                 FAQ
+              </Link>
+              <Link
+                href="/#team"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Team
               </Link>
             </div>
           </div>

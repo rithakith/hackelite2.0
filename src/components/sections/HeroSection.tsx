@@ -18,9 +18,9 @@ export default function HeroSection() {
         />
       </div>
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-12">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen  gap-8">
         <div className="flex flex-col items-center space-y-6">
-          <h1 className="text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center">
+          <h1 className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center">
             Hackelite 2.0
           </h1>
           <p className="text-white text-xl text-center max-w-2xl mx-auto opacity-90">

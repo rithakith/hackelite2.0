@@ -5,36 +5,36 @@ import Link from "next/link";
 const teamMembers = [
   {
     id: 1,
-    name: "Alex Parker",
-    title: "Tech Lead & Project Manager",
-    image: "/team/member.png", // You'll need to add team member images
-    linkedin: "https://linkedin.com/in/alexparker",
+    name: "Vishwani Bhagya",
+    title: "Chairperson of IEEE WIE Affinity Group University of Moratuwa",
+    image: "/team/vishwani.png", // You'll need to add team member images
+    linkedin: "https://www.linkedin.com/in/vishwani-bhagya/",
     email: "alex.parker@hackelite.com",
-    contact: "+1 (555) 123-4567",
+    contact: "+94 77 644 2877",
   },
   {
     id: 2,
-    name: "Sarah Chen",
-    title: "Full Stack Developer",
-    image: "/team/member.png", // You'll need to add team member images
-    linkedin: "https://linkedin.com/in/sarahchen",
-    email: "sarah.chen@hackelite.com",
-    contact: "+1 (555) 234-5678",
+    name: "Rithara Kithmanthie",
+    title: "Vice-Chairperson of IEEE WIE Affinity Group University of Moratuwa",
+    image: "/team/rithara.png", // You'll need to add team member images
+    linkedin: "https://www.linkedin.com/in/ritharak/",
+    email: "ritharakithmanthie@ieee.org",
+    contact: "+94 71 102 0853",
   },
   {
     id: 3,
-    name: "Michael Rodriguez",
-    title: "UI/UX Designer",
-    image: "/team/member.png", // You'll need to add team member images
-    linkedin: "https://linkedin.com/in/mrodriguez",
+    name: "Nilupulee Amarathunga",
+    title: "Secretary of IEEE WIE Affinity Group University of Moratuwa",
+    image: "/team/nilupulee.png", // You'll need to add team member images
+    linkedin: "https://www.linkedin.com/in/nilupulee-amarathunga-637710222/",
     email: "michael.r@hackelite.com",
-    contact: "+1 (555) 345-6789",
+    contact: "+94 76 281 1062",
   },
   {
     id: 4,
     name: "Emily Watson",
-    title: "Backend Developer",
-    image: "/team/member.png", // You'll need to add team member images
+    title: "Hackelite 2.0 Project Co-chairperson",
+    image: "/team/madhuwantha.png", // You'll need to add team member images
     linkedin: "https://linkedin.com/in/emilywatson",
     email: "emily.w@hackelite.com",
     contact: "+1 (555) 456-7890",
@@ -42,7 +42,7 @@ const teamMembers = [
   {
     id: 5,
     name: "David Kim",
-    title: "DevOps Engineer",
+    title: "Hackelite 2.0 Project Co-chairperson",
     image: "/team/member.png", // You'll need to add team member images
     linkedin: "https://linkedin.com/in/davidkim",
     email: "david.kim@hackelite.com",
@@ -51,7 +51,7 @@ const teamMembers = [
   {
     id: 6,
     name: "Lisa Thompson",
-    title: "Frontend Developer",
+    title: "Hackelite 2.0 Project Co-chairperson",
     image: "/team/member.png", // You'll need to add team member images
     linkedin: "https://linkedin.com/in/lisathompson",
     email: "lisa.t@hackelite.com",
