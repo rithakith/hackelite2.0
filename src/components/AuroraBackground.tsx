@@ -51,7 +51,7 @@ export default function AuroraBackground() {
         this.originalY = this.y;
         this.counter = getRandomInt(1, canvasWidth);
         this.radiusMax = 1 + Math.random() * 10;
-        this.speed = getRandomInt(1, 5);
+        this.speed = getRandomInt(10, 50);
         this.color = starColors[Math.floor(Math.random() * starColors.length)];
       }
 
