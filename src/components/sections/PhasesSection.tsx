@@ -16,7 +16,7 @@ const PhasesSection = () => {
             <div className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
               Phase 1
             </div>
-            <h3 className="text-2xl font-bold text-white mt-2 mb-4">
+            <h3 className="text-2xl font-bold font-orbitron text-white mt-2 mb-4">
               Proposal
             </h3>
             <p className="text-white/80 mb-6">
@@ -34,8 +34,8 @@ const PhasesSection = () => {
             <div className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
               Phase 2
             </div>
-            <h3 className="text-2xl font-bold text-white mt-2 mb-4">
-              Minimum Viable Product
+            <h3 className="text-2xl font-bold font-orbitron text-white mt-2 mb-4">
+              Minimum Viable Product / Prototype
             </h3>
             <p className="text-white/80 mb-6">
               Develop and demonstrate your working prototype
@@ -52,7 +52,7 @@ const PhasesSection = () => {
             <div className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
               Phase 3
             </div>
-            <h3 className="text-2xl font-bold text-white mt-2 mb-4">
+            <h3 className="text-2xl font-bold font-orbitron text-white mt-2 mb-4">
               Pitching
             </h3>
             <p className="text-white/80 mb-6">

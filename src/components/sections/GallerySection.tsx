@@ -28,17 +28,17 @@ const firstRow = [
 const secondRow = [
   {
     id: 5,
-    src: "/gallery/img1.jpg",
+    src: "/gallery/img5.png",
     alt: "Gallery Image 5",
   },
   {
     id: 6,
-    src: "/gallery/img2.jpg",
+    src: "/gallery/img6.png",
     alt: "Gallery Image 6",
   },
   {
     id: 7,
-    src: "/gallery/img3.jpg",
+    src: "/gallery/img7.png",
     alt: "Gallery Image 7",
   },
 ];

@@ -4,14 +4,14 @@ const stats = [
   {
     id: 1,
     title: "Delegates",
-    value: "500+",
+    value: "400+",
     description: "Passionate participants",
   },
   {
     id: 2,
     title: "Universities",
-    value: "50+",
-    description: "Leading institutions",
+    value: "26",
+    description: "Leading Universities",
   },
   {
     id: 3,

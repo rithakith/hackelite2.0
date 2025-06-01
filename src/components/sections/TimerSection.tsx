@@ -57,13 +57,14 @@ const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
         <div className="grid grid-cols-4 gap-4 md:gap-8">
           {Object.entries(timeLeft).map(([key, value]) => (
             <div key={key} className="flex flex-col items-center">
-              <div className="lg:w-24 w-16 lg:h-24 h-16 flex items-center justify-center bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 rounded-xl backdrop-blur-md border border-white/10 hover:border-[#b146e4]/50 transition-all duration-300 shadow-lg hover:shadow-[#a280ec]/20">
+              <div className="lg:w-24 w-14 lg:h-24 h-14 flex items-center justify-center bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 rounded-xl backdrop-blur-md border border-white/10 hover:border-[#b146e4]/50 transition-all duration-300 shadow-lg hover:shadow-[#a280ec]/20">
                 <span className="font-mono text-4xl font-bold text-white">
                   {value.toString().padStart(2, "0")}
                 </span>
-              </div>
+              </div>{" "}
               <span className="mt-2 text-white/80 font-medium capitalize">
-                {key}
+                <span className="hidden sm:inline">{key}</span>
+                <span className="sm:hidden">{key.charAt(0).toUpperCase()}</span>
               </span>
             </div>
           ))}

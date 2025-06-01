@@ -8,9 +8,10 @@ import TimelineSection from "@/components/sections/TimelineSection";
 import TeamSection from "@/components/sections/TeamSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/sections/Footer";
+import WinnersSection from "@/components/sections/WinnersSection";
 
 export default function Home() {
-  const registrationDeadline = "2025-06-01T23:59:59"; // Set your registration deadline here
+  const registrationDeadline = "2025-07-01T23:59:59"; // Set your registration deadline here
 
   return (
     <div className="relative">
@@ -21,6 +22,7 @@ export default function Home() {
       <PhasesSection />
       <StatsSection />
       <TimelineSection />
+      <WinnersSection />
             <GallerySection />
 
       <FAQSection />

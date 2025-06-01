@@ -50,7 +50,7 @@ const FAQSection = () => {
   return (
     <section id="faq" className="w-full py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12">
+        <h2 className="lg:text-5xl text-3xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12">
           Frequently Asked Questions
         </h2>
 
