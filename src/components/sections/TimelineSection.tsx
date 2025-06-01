@@ -5,47 +5,41 @@ const timeline = [
   {
     id: 1,
     date: "June 1, 2025",
-    title: "Registration Opens",
+    title: "HackElite Registrations Open",
     description:
-      "Begin your journey by registering your team for HackElite 2.0",
+      "The gateway to innovation opens! University teams across Sri Lanka are invited to join HackElite 2.0 and begin their transformative journey from concept to reality.",
     icon: "🚀",
   },
   {
     id: 2,
     date: "June 15, 2025",
-    title: "Team Formation Deadline",
+    title: "Ideation Phase Launch",
     description:
-      "Final date to complete your team registration and submission of initial proposals",
-    icon: "👥",
+      "Time to unleash your creativity! Teams dive deep into brainstorming, refining groundbreaking ideas, and exploring innovative solutions to tackle real-world challenges.",
+    icon: "💡",
   },
   {
     id: 3,
     date: "July 1, 2025",
-    title: "Proposal Evaluation",
+    title: "Prototype Development Begins",
     description:
-      "Expert panel reviews project proposals and provides initial feedback",
-    icon: "📋",
+      "From ideas to implementation! Teams start building functional prototypes, turning their visions into tangible solutions that showcase their potential to revolutionize industries.",
+    icon: "🔧",
   },
   {
     id: 4,
-    date: "July 15, 2025",
-    title: "Development Phase",
+    date: "July 20, 2025",
+    title: "Technical Pitch Presentations",
     description:
-      "Start building your minimum viable product with mentor support",
-    icon: "💻",
-  },
-  {
-    id: 5,
-    date: "August 15, 2025",
-    title: "MVP Submission",
-    description: "Submit your working prototype for preliminary evaluation",
+      "The moment of truth arrives! Teams present their prototypes to expert judges, receive valuable feedback, and compete for advancement to the final stage.",
     icon: "🎯",
   },
   {
-    id: 6,
-    date: "September 1, 2025",
-    title: "Final Pitch",
-    description: "Present your solution to judges and stakeholders",
+    id: 5,
+    date: "August 10, 2025",
+    title: "HackElite Grand Finale",
+    description:
+      "The ultimate showdown! Top teams pitch their startup solutions to prestigious judges, competing for recognition, prizes, and support to scale their innovations.",
     icon: "🏆",
   },
 ];
@@ -81,9 +75,9 @@ const TimelineSection = () => {
                   </div>
 
                   <div className="p-3 md:p-6 rounded-xl backdrop-blur-md border border-white/10 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 transition-all duration-300 hover:border-[#b146e4]/50 hover:shadow-lg hover:shadow-[#a280ec]/20">
-                    <div className="text-sm md:text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
+                    {/* <div className="text-sm md:text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
                       {item.date}
-                    </div>
+                    </div> */}
                     <h3 className="text-base md:text-xl font-bold text-white mt-1.5 md:mt-2 mb-2 md:mb-3">
                       {item.title}
                     </h3>

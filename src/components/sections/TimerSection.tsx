@@ -51,7 +51,7 @@ const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
     <section className="w-full px-4 min-h-[40vh] flex items-center justify-center py-20">
       {" "}
       <div className="text-center p-8 backdrop-blur-lg bg-white/5 rounded-2xl border border-white/10 ">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-8">
+        <h2 className="text-3xl font-orbitron font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-8">
           Registration Closing In
         </h2>
         <div className="grid grid-cols-4 gap-4 md:gap-8">

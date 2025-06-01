@@ -52,7 +52,7 @@ const teamMembers = [
     id: 6,
     name: "Gimhani Jayamanna",
     title: "Hackelite 2.0 Project Co-chairperson",
-    image: "/team/member.png", // You'll need to add team member images
+    image: "/team/gimhani.png", // You'll need to add team member images
     linkedin: "https://www.linkedin.com/in/gimhani-jayamanna-41695a276/",
     email: "pabasarajayamanna@gmail.com",
     contact: "+94 77 785 9638",
