@@ -6,7 +6,7 @@
 }
 
 @theme inline {
-   --color-color1: var(--color1);
+  --color-color1: var(--color1);
   --color-color2: var(--color2);
   --color-color3: var(--color3);
   --color-color4: var(--color4);
@@ -14,17 +14,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-orbitron: var(--font-orbitron);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-     --color1:#a280ec;
-  --color2:#b146e4;
-  --color3:#d30de5;
-    --color4:#18d6ed;
-
+    --color1: #a280ec;
+    --color2: #b146e4;
+    --color3: #d30de5;
+    --color4: #18d6ed;
   }
 }
 
@@ -43,30 +43,18 @@ body {
   color: white; /* optional */
 }
 .aurora-background::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;  /* <-- put behind canvas */
+  z-index: -1; /* <-- put behind canvas */
   background: radial-gradient(
       circle at center,
       var(--color1) 0%,
       transparent 25%
     ),
-    radial-gradient(
-      circle at center,
-      var(--color2) 10%,
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at center,
-      var(--color3) 20%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at center,
-      var(--color4) 30%,
-      transparent 55%
-    );
+    radial-gradient(circle at center, var(--color2) 10%, transparent 35%),
+    radial-gradient(circle at center, var(--color3) 20%, transparent 45%),
+    radial-gradient(circle at center, var(--color4) 30%, transparent 55%);
   opacity: 0.15;
   pointer-events: none;
 }

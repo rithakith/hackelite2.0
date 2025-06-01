@@ -18,50 +18,49 @@ const Navbar = () => {
               className="lg:w-48 w-28 h-auto"
             />
           </div>
-          {/* Center Navigation Links with glassmorphism */}
+          {/* Center Navigation Links with glassmorphism */}{" "}
           <div className="hidden md:block px-8 py-4 rounded-full backdrop-blur-md bg-black/60 border border-white/10">
             <div className="flex items-center gap-6">
+              {" "}
               <Link
-                href="/#about"
-                className="text-white/80 hover:text-white transition-colors"
+                href="/"
+                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Home
-              </Link>
+              </Link>{" "}
               <Link
                 href="/#about"
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 About
-              </Link>
-
+              </Link>{" "}
               <Link
                 href="/#phases"
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Phases
-              </Link>
+              </Link>{" "}
               <Link
                 href="/#timeline"
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Timeline
-              </Link>
-
+              </Link>{" "}
               <Link
                 href="/#gallery"
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Gallery
-              </Link>
+              </Link>{" "}
               <Link
                 href="/#faq"
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 FAQ
-              </Link>
+              </Link>{" "}
               <Link
                 href="/#team"
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Team
               </Link>
@@ -70,7 +69,7 @@ const Navbar = () => {
           {/* Register Button aligned to right */}
           <Link
             href="/#register"
-            className="lg:px-6 px-4 text-center lg:text-lg text-sm py-2 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 transition-all duration-300"
+            className="lg:px-6 px-4 text-center lg:text-lg text-sm py-2 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 hover:scale-105 hover:font-bold transition-all duration-300 ease-in-out transform"
           >
             Register Now
           </Link>

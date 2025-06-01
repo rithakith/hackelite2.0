@@ -2,7 +2,7 @@
 
 export default function AboutSection() {
   return (
-    <section className="relative  w-full flex items-center justify-center ">
+    <section id="about" className="relative  w-full flex items-center justify-center ">
       {/* Background Image with Glassmorphism */}
       <div
         className="absolute inset-0 z-0"

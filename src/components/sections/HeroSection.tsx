@@ -11,7 +11,8 @@ export default function HeroSection() {
       {/* Main content */}
       <div className="relative z-10 flex flex-col  items-center justify-center lg:min-h-screen py-24 gap-8">
         <div className="flex flex-col items-center space-y-6">
-          <h1 className="lg:text-8xl text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center">
+          {" "}
+          <h1 className="lg:text-8xl text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center font-orbitron">
             Hackelite 2.0
           </h1>
           <p className="text-white text-xl text-center max-w-2xl mx-auto opacity-90">
