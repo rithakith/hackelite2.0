@@ -44,7 +44,6 @@ const winners = [
   },
 ];
 
-const podiumHeights = ["h-32", "h-24", "h-20"];
 const crownEmojis = ["🥇", "🥈", "🥉"];
 
 export default function WinnersSection() {
