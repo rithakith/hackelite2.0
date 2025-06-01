@@ -26,7 +26,7 @@ export default function AuroraBackground() {
     const numberOfStars = 500;
     const stars: Star[] = [];
 
-    let currentSpeedMultiplier = 1;
+    let currentSpeedMultiplier = 10;
 
     const frames_per_second = 60;
     const interval = Math.floor(1000 / frames_per_second);

@@ -57,9 +57,12 @@ const GallerySection = () => {
   }, [allImages.length]);
 
   return (
-    <section id="gallery" className="w-full min-h-[60vh] flex flex-col items-center justify-center py-20 px-4">
+    <section
+      id="gallery"
+      className="w-full min-h-[60vh] flex flex-col items-center justify-center py-20 px-4"
+    >
       <div className="max-w-6xl w-full">
-        <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12">
+        <h2 className="text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12">
           Event Gallery
         </h2>
 

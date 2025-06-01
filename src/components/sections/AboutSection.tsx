@@ -2,12 +2,12 @@
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative  w-full flex items-center justify-center ">
+    <section
+      id="about"
+      className="relative  w-full flex items-center justify-center "
+    >
       {/* Background Image with Glassmorphism */}
-      <div
-        className="absolute inset-0 z-0"
-       
-      />
+      <div className="absolute inset-0 z-0" />
 
       {/* Content Container with Glassmorphism */}
       <div className="relative z-10 max-w-6xl mx-auto px-4">
@@ -24,23 +24,22 @@ export default function AboutSection() {
 
             {/* Text Content */}
             <div className="w-full lg:w-1/2 space-y-6 p-4 lg:p-0">
-              <h2 className="lg:text-5xl text-3xl text-center  font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] lg:text-left ">
+              <h2 className="lg:text-5xl text-3xl text-center font-orbitron font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] lg:text-left ">
                 About Hackelite
               </h2>
               <p className="text-white/90 lg:text-lg text-md leading-relaxed lg:text-left text-center">
                 HackElite is the flagship competitive coding and innovation
-                challenge organized by the IEEE Student Branch affinity group the University
-                of Moratuwa. Building on the success of HackElite 1.0, this
-                year&apos;s competition aims to push the boundaries of
+                challenge organized by the IEEE Student Branch Affinity group of
+                University of Moratuwa. Building on the success of HackElite
+                1.0, this year&apos;s competition aims to push the boundaries of
                 technological innovation even further.
               </p>
               <p className="text-white/90 lg:text-lg text-md leading-relaxed lg:text-left text-center">
                 Our mission is to provide a platform for aspiring developers and
                 innovators to showcase their skills, collaborate with
                 like-minded individuals, and create solutions that make a real
-                impact. 
+                impact.
               </p>
-            
             </div>
           </div>
         </div>

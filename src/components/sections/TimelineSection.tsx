@@ -56,7 +56,7 @@ const TimelineSection = () => {
   return (
     <section id="timeline" className="w-full py-12 md:py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-8 md:mb-16">
+        <h2 className="lg:text-5xl text-3xl md:text-4xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-8 md:mb-16">
           Competition Timeline
         </h2>
 

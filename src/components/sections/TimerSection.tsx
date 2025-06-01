@@ -38,7 +38,7 @@ const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
     return (
       <section className="w-full  min-h-[40vh] flex items-center justify-center">
         <div className="text-center p-8 backdrop-blur-lg bg-white/5 rounded-2xl border border-white/10 shadow-[0_0_50px_rgba(162,128,236,0.15)]">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4">
+          <h2 className="text-3xl font-orbitron font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4">
             Registration Closed
           </h2>
           <p className="text-white/80">The registration period has ended.</p>
