@@ -10,33 +10,52 @@ const faqs = [
   },
   {
     id: 2,
-    question: "Who can participate?",
+    question: "How many people can be in a team?",
     answer:
-      "The competition is open to university students, recent graduates, and young professionals. Teams can consist of 2-4 members, and we encourage diverse skill sets including programming, design, and business development.",
+      "A team can consist of a minimum of 3 participants and a maximum of 4 participants with minimum 2 girls required per team.",
   },
   {
     id: 3,
-    question: "What are the submission requirements?",
+    question: "Who can participate in HackElite 2.0?",
     answer:
-      "Teams must submit a working prototype of their solution, along with comprehensive documentation including the problem statement, proposed solution, technical architecture, and future development roadmap. All code must be original and created during the competition period.",
+      "All current undergraduates from any state or private university are eligible to participate.",
   },
   {
     id: 4,
-    question: "Is there any registration fee?",
+    question: "Can a team consist of participants from different universities?",
     answer:
-      "No, participation in HackElite 2.0 is completely free. We believe in making innovation accessible to all talented individuals. However, registration is limited and will be on a first-come, first-served basis.",
+      "No, all team members must be from the same university, as HackElite 2.0 is an inter-university competition. However, team members don't need to be from the same faculty.",
   },
   {
     id: 5,
-    question: "What kind of support will be provided?",
+    question: "Is this competition open only to IEEE members?",
     answer:
-      "Participants will have access to mentors, technical workshops, API resources, and cloud credits. We also provide networking opportunities with industry experts and potential investors throughout the competition.",
+      "No, the competition is open to all eligible participants, not just IEEE members.",
   },
   {
     id: 6,
-    question: "What are the evaluation criteria?",
+    question: "What is the evaluation process?",
     answer:
-      "Projects will be judged based on innovation (30%), technical complexity (25%), practical implementation (25%), and presentation quality (20%). Special consideration will be given to solutions that address UN Sustainable Development Goals.",
+      "The evaluation process consists of several phases: 1. Proposal Phase: Participants will first create a proposal. 2. Prototype Submission: Successful participants will work on their proposed plan and create a minimum viable product. 3. Final Day: Participants who pass the submission round will be eligible to participate on the final day. 4. Final Evaluation: The final marks will be calculated based on your team's overall performance.",
+  },
+  {
+    id: 7,
+    question:
+      "I have never participated in this kind of competition before. Can I join?",
+    answer:
+      "Absolutely! We will organize several workshops to enhance your knowledge and skills.",
+  },
+  {
+    id: 8,
+    question: "Is this competition held physically?",
+    answer:
+      "The first phase (Ideathon) and the second phase (prototype submission) will be conducted online. The final day has been organized as a physical event.",
+  },
+  {
+    id: 9,
+    question: "Do you issue certificates for all participants?",
+    answer:
+      "Yes, we issue e-certificates to all participants as recognition of their participation and contribution to the event.",
   },
 ];
 
@@ -52,9 +71,8 @@ const FAQSection = () => {
       <div className="max-w-4xl mx-auto">
         <h2 className="lg:text-5xl text-3xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12">
           Frequently Asked Questions
-        </h2>
-
-        <div className="space-y-4">
+        </h2>{" "}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
           {faqs.map((faq) => (
             <div
               key={faq.id}
