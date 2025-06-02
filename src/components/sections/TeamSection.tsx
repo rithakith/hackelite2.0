@@ -9,7 +9,7 @@ const teamMembers = [
     title: "Chairperson of IEEE WIE Affinity Group University of Moratuwa",
     image: "/team/vishwani.png", // You'll need to add team member images
     linkedin: "https://www.linkedin.com/in/vishwani-bhagya/",
-    email: "alex.parker@hackelite.com",
+    email: "vishwanibhagya@ieee.org",
     contact: "+94 77 644 2877",
   },
   {
@@ -27,7 +27,7 @@ const teamMembers = [
     title: "Secretary of IEEE WIE Affinity Group University of Moratuwa",
     image: "/team/nilupulee.png", // You'll need to add team member images
     linkedin: "https://www.linkedin.com/in/nilupulee-amarathunga-637710222/",
-    email: "michael.r@hackelite.com",
+    email: "nilupuleeamarathunga@ieee.org",
     contact: "+94 76 281 1062",
   },
   {

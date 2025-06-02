@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav
       className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300
       lg:bg-transparent lg:backdrop-blur-none
-      backdrop-blur-lg bg-black/60 border-b border-white/10 lg:border-none"
+      backdrop-blur-lg bg-transparent border-b border-white/10 lg:border-none"
     >
       <div className="relative w-full lg:max-w-8xl mx-auto px-4 lg:py-8 py-4">
         <div className="flex items-center justify-between">
@@ -24,43 +24,43 @@ const Navbar = () => {
               {" "}
               <Link
                 href="/"
-                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
+                className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Home
               </Link>{" "}
               <Link
                 href="/#about"
-                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
+                className="text-white/80  font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 About
               </Link>{" "}
               <Link
                 href="/#phases"
-                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
+                className="text-white/80  font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Phases
               </Link>{" "}
               <Link
                 href="/#timeline"
-                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
+                className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Timeline
               </Link>{" "}
               <Link
                 href="/#gallery"
-                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
+                className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Gallery
               </Link>{" "}
               <Link
                 href="/#faq"
-                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
+                className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 FAQ
               </Link>{" "}
               <Link
                 href="/#team"
-                className="text-white/80 hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
+                className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Team
               </Link>

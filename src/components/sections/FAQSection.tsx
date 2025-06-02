@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     id: 2,
-    question: "How many people can be in a team?",
+    question: "How many members can be in a team?",
     answer:
       "A team can consist of a minimum of 3 participants and a maximum of 4 participants with minimum 2 girls required per team.",
   },
