@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 
 const firstRow = [
@@ -46,29 +46,7 @@ const secondRow = [
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
   const allImages = [...firstRow, ...secondRow];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "-50px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % allImages.length);
@@ -80,79 +58,44 @@ const GallerySection = () => {
   return (
     <section
       id="gallery"
-      ref={sectionRef}
       className="relative w-full min-h-[60vh] flex flex-col items-center justify-center py-20 px-4"
     >
       {/* Background Lighting Effects */}
       <div className="absolute inset-0 z-0">
         <div
-          className={`absolute top-1/4 left-1/6 w-80 h-80 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-25 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute top-1/4 left-1/6 w-80 h-80 rounded-full opacity-25 blur-3xl"
           style={{
             background: "radial-gradient(circle, #a280ec 0%, transparent 70%)",
-            transform: `translate(-50%, -50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "0.5s",
+            transform: "translate(-50%, -50%)",
           }}
         />
         <div
-          className={`absolute top-2/3 right-1/6 w-72 h-72 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-30 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute top-2/3 right-1/6 w-72 h-72 rounded-full opacity-30 blur-3xl"
           style={{
             background: "radial-gradient(circle, #d30de5 0%, transparent 70%)",
-            transform: `translate(50%, -50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "0.8s",
+            transform: "translate(50%, -50%)",
           }}
         />
         <div
-          className={`absolute bottom-1/4 left-1/2 w-64 h-64 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-20 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute bottom-1/4 left-1/2 w-64 h-64 rounded-full opacity-20 blur-3xl"
           style={{
             background: "radial-gradient(circle, #18d6ed 0%, transparent 70%)",
-            transform: `translate(-50%, 50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "1.1s",
+            transform: "translate(-50%, 50%)",
           }}
         />
-      </div>
-
+      </div>{" "}
       <div className="relative z-10 max-w-6xl w-full">
-        {" "}
         <h2
-          className={`text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12 transition-all duration-1000 ease-out ${
-            isVisible
-              ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 translate-y-8 scale-95"
-          }`}
+          className="text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12"
           style={{
-            textShadow: isVisible
-              ? "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)"
-              : "none",
-            animationDelay: "0.3s",
+            textShadow:
+              "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)",
           }}
         >
           Event Gallery
         </h2>{" "}
         {/* Mobile Carousel */}
-        <div
-          className={`md:hidden relative transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ animationDelay: "0.6s" }}
-        >
+        <div className="md:hidden relative">
           <div className="overflow-hidden rounded-xl relative aspect-square">
             <div
               key={allImages[currentSlide].id}
@@ -227,24 +170,13 @@ const GallerySection = () => {
           </div>
         </div>{" "}
         {/* Desktop Grid Layout */}
-        <div
-          className={`hidden md:block space-y-6 transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ animationDelay: "0.6s" }}
-        >
-          {" "}
+        <div className="hidden md:block space-y-6">
           {/* First row - 4 images */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {firstRow.map((image, index) => (
               <div
                 key={image.id}
-                className={`group relative aspect-square overflow-hidden rounded-xl cursor-pointer transition-all duration-1000 ease-out ${
-                  isVisible
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 translate-y-8 scale-95"
-                }`}
-                style={{ animationDelay: `${0.9 + index * 0.1}s` }}
+                className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer"
                 onClick={() =>
                   setSelectedImage(selectedImage === image.id ? null : image.id)
                 }
@@ -268,12 +200,7 @@ const GallerySection = () => {
             {secondRow.map((image, index) => (
               <div
                 key={image.id}
-                className={`group relative aspect-square overflow-hidden rounded-xl cursor-pointer transition-all duration-1000 ease-out ${
-                  isVisible
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 translate-y-8 scale-95"
-                }`}
-                style={{ animationDelay: `${1.3 + index * 0.1}s` }}
+                className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer"
                 onClick={() =>
                   setSelectedImage(selectedImage === image.id ? null : image.id)
                 }

@@ -56,55 +56,53 @@ export default function LoadingAnimation({
           : "opacity-100 scale-100 "
       }`}
     >
+      {" "}
       {/* Aurora Background for Loading */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a14] via-[#0f0f1e] to-[#141428]">
-        {/* Animated Background Orbs */}
+        {/* Animated Background Orbs - Responsive sizes */}
         <div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl bg-gradient-to-r from-[#a280ec] to-[#b146e4] animate-pulse"
+          className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full opacity-20 blur-3xl bg-gradient-to-r from-[#a280ec] to-[#b146e4] animate-pulse"
           style={{ animationDuration: "3s" }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-25 blur-3xl bg-gradient-to-r from-[#d30de5] to-[#18d6ed] animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full opacity-25 blur-3xl bg-gradient-to-r from-[#d30de5] to-[#18d6ed] animate-pulse"
           style={{ animationDuration: "4s", animationDelay: "1s" }}
         />
         <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full opacity-15 blur-3xl bg-gradient-to-r from-[#18d6ed] to-[#a280ec] animate-pulse"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full opacity-15 blur-3xl bg-gradient-to-r from-[#18d6ed] to-[#a280ec] animate-pulse"
           style={{ animationDuration: "5s", animationDelay: "2s" }}
         />
       </div>
-
-     
       {/* Main Loading Container */}
-      <div className="relative z-10 flex flex-col items-center space-y-8 px-4">
+      <div className="relative z-10 flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8 px-4">
         {/* Logo with Glitch Effect */}
         <div className="text-center">
-          <p className="text-white/70 text-lg md:text-xl font-orbitron mt-4 animate-bounce">
+          <p className="text-white/70 text-sm sm:text-base md:text-lg lg:text-xl font-orbitron mt-2 sm:mt-4 animate-bounce px-2">
             {loadingMessages[currentMessage]}
           </p>
         </div>
-
         {/* Advanced Loader Ring */}
         <div className="relative">
-          {/* Outer Ring with Gradient */}
-          <div className="relative w-32 h-32 md:w-40 md:h-40">
+          {/* Outer Ring with Gradient - Responsive sizes */}
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40">
             {/* Background Ring */}
-            <div className="absolute inset-0 rounded-full border-4 border-white/10"></div>
-
+            <div className="absolute inset-0 rounded-full border-2 sm:border-3 md:border-4 border-white/10"></div>
             {/* Animated Progress Ring */}
             <svg
               className="absolute inset-0 w-full h-full transform -rotate-90"
               viewBox="0 0 100 100"
             >
+              {" "}
               <circle
                 cx="50"
                 cy="50"
                 r="45"
                 stroke="url(#gradient)"
-                strokeWidth="4"
+                strokeWidth="3"
                 fill="transparent"
                 strokeDasharray={`${progress * 2.83} 283`}
                 strokeLinecap="round"
-                className="transition-all duration-300 ease-out"
+                className="transition-all duration-300 ease-out sm:stroke-[3.5] md:stroke-4"
               />
               <defs>
                 <linearGradient
@@ -120,26 +118,23 @@ export default function LoadingAnimation({
                 </linearGradient>
               </defs>
             </svg>
-
             {/* Inner Glow */}
-            <div className="absolute inset-3 rounded-full bg-gradient-to-r from-[#a280ec]/20 via-[#d30de5]/20 to-[#18d6ed]/20 blur-md animate-pulse"></div>
-
+            <div className="absolute inset-3 rounded-full bg-gradient-to-r from-[#a280ec]/20 via-[#d30de5]/20 to-[#18d6ed]/20 blur-md animate-pulse"></div>{" "}
             {/* Center Elements */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-orbitron font-bold text-white">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-orbitron font-bold text-white">
                   {Math.round(progress)}%
                 </div>
                 {/* <div className="w-4 h-4 bg-gradient-to-r from-[#a280ec] to-[#18d6ed] rounded-full animate-ping mx-auto mt-2"></div> */}
               </div>
             </div>
           </div>
-        </div>
-
+        </div>{" "}
         {/* Progress Bar */}
-        <div className="w-80 max-w-sm">
+        <div className="w-64 sm:w-72 md:w-80 max-w-sm px-4">
           {/* Progress Bar Background */}
-          <div className="w-full h-3 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm border border-white/20">
+          <div className="w-full h-2 sm:h-2.5 md:h-3 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm border border-white/20">
             {/* Progress Fill */}
             <div
               className="h-full bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] transition-all duration-300 ease-out relative overflow-hidden rounded-full"
@@ -150,19 +145,17 @@ export default function LoadingAnimation({
             </div>
           </div>
         </div>
-
         {/* Loading Dots */}
-        <div className="flex space-x-2">
+        <div className="flex space-x-1.5 sm:space-x-2">
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
-              className="w-3 h-3 rounded-full bg-gradient-to-r from-[#a280ec] to-[#18d6ed] animate-bounce"
+              className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-gradient-to-r from-[#a280ec] to-[#18d6ed] animate-bounce"
               style={{ animationDelay: `${i * 0.2}s` }}
             />
           ))}
         </div>
       </div>
-
       {/* Custom Styles */}
       <style jsx>{`
         @keyframes float {

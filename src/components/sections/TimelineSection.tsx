@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 
 const timeline = [
   {
@@ -45,121 +44,54 @@ const timeline = [
 ];
 
 const TimelineSection = () => {
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "-50px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="timeline"
-      ref={sectionRef}
-      className="relative w-full py-12 md:py-20 px-4"
-    >
+    <section id="timeline" className="relative w-full py-12 md:py-20 px-4">
+      {" "}
       {/* Background Lighting Effects */}
       <div className="absolute inset-0 z-0">
         <div
-          className={`absolute top-1/4 left-1/6 w-80 h-80 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-25 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute top-1/4 left-1/6 w-80 h-80 rounded-full opacity-25 blur-3xl"
           style={{
             background: "radial-gradient(circle, #a280ec 0%, transparent 70%)",
-            transform: `translate(-50%, -50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "0.5s",
+            transform: "translate(-50%, -50%)",
           }}
         />
         <div
-          className={`absolute top-2/3 right-1/6 w-72 h-72 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-30 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute top-2/3 right-1/6 w-72 h-72 rounded-full opacity-30 blur-3xl"
           style={{
             background: "radial-gradient(circle, #d30de5 0%, transparent 70%)",
-            transform: `translate(50%, -50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "0.8s",
+            transform: "translate(50%, -50%)",
           }}
         />
         <div
-          className={`absolute bottom-1/4 left-1/2 w-64 h-64 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-20 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute bottom-1/4 left-1/2 w-64 h-64 rounded-full opacity-20 blur-3xl"
           style={{
             background: "radial-gradient(circle, #18d6ed 0%, transparent 70%)",
-            transform: `translate(-50%, 50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "1.1s",
+            transform: "translate(-50%, 50%)",
           }}
         />
-      </div>
-
+      </div>{" "}
       <div className="relative z-10 max-w-6xl mx-auto">
-        {" "}
         <h2
-          className={`lg:text-5xl text-4xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-8 md:mb-16 transition-all duration-1000 ease-out ${
-            isVisible
-              ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 translate-y-8 scale-95"
-          }`}
+          className="lg:text-5xl text-4xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-8 md:mb-16"
           style={{
-            textShadow: isVisible
-              ? "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)"
-              : "none",
-            animationDelay: "0.3s",
+            textShadow:
+              "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)",
           }}
         >
           Competition Timeline
         </h2>{" "}
         <div className="relative">
           {/* Timeline line */}
-          <div
-            className={`absolute md:left-[50%] left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#a280ec] via-[#d30de5] to-[#18d6ed] transition-all duration-1000 ease-out ${
-              isVisible ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
-            }`}
-            style={{ animationDelay: "0.6s" }}
-          />
+          <div className="absolute md:left-[50%] left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#a280ec] via-[#d30de5] to-[#18d6ed] opacity-100" />
 
-          <div className="relative" ref={timelineRef}>
-            {" "}
+          <div className="relative">
             {timeline.map((item, index) => (
               <div
                 key={item.id}
                 className={`flex items-start gap-3 md:gap-8 mb-8 md:mb-12 ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } flex-row transition-all duration-1000 ease-out ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
-                style={{ animationDelay: `${0.8 + index * 0.2}s` }}
+                } flex-row`}
               >
                 <div className="md:w-[calc(50%-2rem)] w-full group md:block flex items-start gap-3">
                   {/* Icon for mobile - shown on left */}

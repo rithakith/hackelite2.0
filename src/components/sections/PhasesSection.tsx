@@ -1,106 +1,48 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 
 const PhasesSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "-50px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
   return (
     <section
       id="phases"
-      ref={sectionRef}
       className="relative w-full min-h-[60vh] flex flex-col items-center justify-center py-20 px-4"
     >
+      {" "}
       {/* Background Lighting Effects */}
       <div className="absolute inset-0 z-0">
         <div
-          className={`absolute top-1/4 left-1/6 w-80 h-80 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-25 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute top-1/4 left-1/6 w-80 h-80 rounded-full opacity-25 blur-3xl"
           style={{
             background: "radial-gradient(circle, #a280ec 0%, transparent 70%)",
-            transform: `translate(-50%, -50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "0.4s",
+            transform: "translate(-50%, -50%)",
           }}
         />
         <div
-          className={`absolute top-1/3 right-1/6 w-96 h-96 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-30 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute top-1/3 right-1/6 w-96 h-96 rounded-full opacity-30 blur-3xl"
           style={{
             background: "radial-gradient(circle, #d30de5 0%, transparent 70%)",
-            transform: `translate(50%, -50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "0.7s",
+            transform: "translate(50%, -50%)",
           }}
         />
         <div
-          className={`absolute bottom-1/4 left-1/2 w-72 h-72 rounded-full transition-all duration-2000 ease-out ${
-            isVisible
-              ? "opacity-20 scale-100 blur-3xl"
-              : "opacity-0 scale-50 blur-2xl"
-          }`}
+          className="absolute bottom-1/4 left-1/2 w-72 h-72 rounded-full opacity-20 blur-3xl"
           style={{
             background: "radial-gradient(circle, #18d6ed 0%, transparent 70%)",
-            transform: `translate(-50%, 50%) ${
-              isVisible ? "scale(1)" : "scale(0.5)"
-            }`,
-            animationDelay: "1.0s",
+            transform: "translate(-50%, 50%)",
           }}
         />
-      </div>
-
+      </div>{" "}
       <div className="relative z-10 max-w-6xl w-full">
         <h2
-          className={`text-4xl lg:text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12 transition-all duration-1000 ease-out ${
-            isVisible
-              ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 translate-y-8 scale-95"
-          }`}
+          className="text-4xl lg:text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-12"
           style={{
-            textShadow: isVisible
-              ? "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)"
-              : "none",
-            animationDelay: "0.3s",
+            textShadow:
+              "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)",
           }}
         >
           Competition Phases
-        </h2>
+        </h2>{" "}
         <div className="grid md:grid-cols-3 gap-6 md:items-stretch">
-          <div
-            className={`group p-8 rounded-xl backdrop-blur-md border transition-all duration-1000 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 border-white/10 hover:border-[#b146e4]/50 shadow-lg hover:shadow-[#a280ec]/20 flex flex-col ease-out ${
-              isVisible
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 translate-y-8 scale-95"
-            }`}
-            style={{ animationDelay: "0.6s" }}
-          >
+          <div className="group p-8 rounded-xl backdrop-blur-md border bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 border-white/10 hover:border-[#b146e4]/50 shadow-lg hover:shadow-[#a280ec]/20 flex flex-col">
             <div className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
               Phase 1
             </div>
@@ -114,14 +56,7 @@ const PhasesSection = () => {
               detailed proposal for evaluation.
             </p>
           </div>
-          <div
-            className={`group p-8 rounded-xl backdrop-blur-md border transition-all duration-1000 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 border-white/10 hover:border-[#b146e4]/50 shadow-lg hover:shadow-[#a280ec]/20 flex flex-col ease-out ${
-              isVisible
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 translate-y-8 scale-95"
-            }`}
-            style={{ animationDelay: "0.9s" }}
-          >
+          <div className="group p-8 rounded-xl backdrop-blur-md border bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 border-white/10 hover:border-[#b146e4]/50 shadow-lg hover:shadow-[#a280ec]/20 flex flex-col">
             <div className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
               Phase 2
             </div>
@@ -135,14 +70,7 @@ const PhasesSection = () => {
               and submit it for review.
             </p>
           </div>
-          <div
-            className={`group p-8 rounded-xl backdrop-blur-md border transition-all duration-1000 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 border-white/10 hover:border-[#b146e4]/50 shadow-lg hover:shadow-[#a280ec]/20 flex flex-col ease-out ${
-              isVisible
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 translate-y-8 scale-95"
-            }`}
-            style={{ animationDelay: "1.2s" }}
-          >
+          <div className="group p-8 rounded-xl backdrop-blur-md border bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 border-white/10 hover:border-[#b146e4]/50 shadow-lg hover:shadow-[#a280ec]/20 flex flex-col">
             <div className="text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
               Phase 3
             </div>
