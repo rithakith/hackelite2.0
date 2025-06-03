@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const winners = [
   {
@@ -51,6 +51,28 @@ const crownEmojis = ["🥇", "🥈", "🥉"];
 
 export default function WinnersSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "-50px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % winners.length);
@@ -69,32 +91,110 @@ export default function WinnersSection() {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
   return (
-    <section id="winners" className="w-full py-12 md:py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4">
+    <section
+      id="winners"
+      ref={sectionRef}
+      className="relative w-full py-12 md:py-20 px-4"
+    >
+      {/* Background Lighting Effects */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className={`absolute top-1/4 left-1/5 w-96 h-96 rounded-full transition-all duration-2000 ease-out ${
+            isVisible
+              ? "opacity-25 scale-100 blur-3xl"
+              : "opacity-0 scale-50 blur-2xl"
+          }`}
+          style={{
+            background: "radial-gradient(circle, #a280ec 0%, transparent 70%)",
+            transform: `translate(-50%, -50%) ${
+              isVisible ? "scale(1)" : "scale(0.5)"
+            }`,
+            animationDelay: "0.5s",
+          }}
+        />
+        <div
+          className={`absolute top-2/3 right-1/5 w-80 h-80 rounded-full transition-all duration-2000 ease-out ${
+            isVisible
+              ? "opacity-30 scale-100 blur-3xl"
+              : "opacity-0 scale-50 blur-2xl"
+          }`}
+          style={{
+            background: "radial-gradient(circle, #d30de5 0%, transparent 70%)",
+            transform: `translate(50%, -50%) ${
+              isVisible ? "scale(1)" : "scale(0.5)"
+            }`,
+            animationDelay: "0.8s",
+          }}
+        />
+        <div
+          className={`absolute bottom-1/4 left-1/2 w-72 h-72 rounded-full transition-all duration-2000 ease-out ${
+            isVisible
+              ? "opacity-20 scale-100 blur-3xl"
+              : "opacity-0 scale-50 blur-2xl"
+          }`}
+          style={{
+            background: "radial-gradient(circle, #18d6ed 0%, transparent 70%)",
+            transform: `translate(-50%, 50%) ${
+              isVisible ? "scale(1)" : "scale(0.5)"
+            }`,
+            animationDelay: "1.1s",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {" "}
+        <h2
+          className={`text-4xl lg:text-5xl font-orbitron font-bold text-center bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text mb-4 transition-all duration-1000 ease-out ${
+            isVisible
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-8 scale-95"
+          }`}
+          style={{
+            textShadow: isVisible
+              ? "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)"
+              : "none",
+            animationDelay: "0.3s",
+          }}
+        >
           HackElite 1.0 Champions
         </h2>
-        <p className="text-white/80 text-center mb-16 max-w-2xl mx-auto">
+        <p
+          className={`text-white/80 text-center mb-16 max-w-2xl mx-auto transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ animationDelay: "0.6s" }}
+        >
           Celebrating the brilliant minds who transformed innovative ideas into
           reality at HackElite 1.0. These teams set the standard for excellence
           and innovation.
         </p>{" "}
         {/* Winners Grid - Desktop / Carousel - Mobile */}
-        <div className="relative">
+        <div
+          className={`relative transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ animationDelay: "0.9s" }}
+        >
+          {" "}
           {/* Desktop Grid */}
           <div className="hidden lg:grid grid-cols-3 gap-8 mb-16">
             {winners.map((winner, index) => (
               <div
                 key={winner.place}
-                className={`relative group ${
+                className={`relative group transition-all duration-1000 ease-out ${
                   index === 0
                     ? "lg:order-2"
                     : index === 1
                     ? "lg:order-1"
                     : "lg:order-3"
+                } ${
+                  isVisible
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : "opacity-0 translate-y-8 scale-95"
                 }`}
+                style={{ animationDelay: `${1.2 + index * 0.2}s` }}
               >
                 {/* Card Container */}
                 <div
@@ -144,10 +244,16 @@ export default function WinnersSection() {
                 </div>
               </div>
             ))}
-          </div>
-
+          </div>{" "}
           {/* Mobile Carousel */}
-          <div className="lg:hidden relative mb-16">
+          <div
+            className={`lg:hidden relative mb-16 transition-all duration-1000 ease-out ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+            style={{ animationDelay: "1.2s" }}
+          >
             {/* Carousel Container */}
             <div className="overflow-hidden rounded-2xl">
               <div
@@ -267,15 +373,50 @@ export default function WinnersSection() {
 
             {/* Mobile Swipe Indicator */}
           </div>
-        </div>
+        </div>{" "}
         {/* Call to Action */}
-        <div className="text-center mt-36">
+        <div
+          className={`text-center mt-36 transition-all duration-1000 ease-out ${
+            isVisible
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-8 scale-95"
+          }`}
+          style={{ animationDelay: "1.8s" }}
+        >
+          {" "}
           <div className="inline-block p-12 backdrop-blur-md bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 rounded-2xl border border-white/10">
             <p className="text-white/90 mb-4 lg:text-3xl text-2xl  font-orbitron">
               Ready to join the next generation of champions?
             </p>
-            <button className="px-8 mt-8 lg:py-6 py-4 lg:text-2xl text-xl  bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] text-white font-orbitron font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-[#a280ec]/30">
-              Register for HackElite 2.0
+            <button className="group relative px-8 mt-8 lg:py-6 py-4 lg:text-2xl text-xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] text-white font-orbitron font-bold rounded-xl overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-[#a280ec]/40 hover:brightness-110 active:scale-95">
+              {/* Animated background shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+              {/* Pulsing border effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+              <div className="absolute inset-[2px] rounded-xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed]" />{" "}
+              {/* Button content */}
+              <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-white transition-colors duration-300">
+                Register for HackElite 2.0
+                <svg
+                  className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-500 ease-out animate-pulse group-hover:animate-none"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  style={{
+                    animationDuration: "2s",
+                    animationIterationCount: "infinite",
+                  }}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </span>
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#a280ec]/20 via-[#b146e4]/20 to-[#18d6ed]/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </button>
           </div>
         </div>
