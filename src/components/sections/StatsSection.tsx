@@ -23,7 +23,8 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="relative w-full min-h-[50vh] flex items-center justify-center py-20 lg:px-4 px-4">
+    // below class should have flex instead of hidden
+    <section className="hidden relative w-full min-h-[50vh] items-center justify-center py-20 lg:px-4 px-4">
       {/* Background Lighting Effects */}
       <div className="absolute inset-0 z-0">
         <div
