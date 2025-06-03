@@ -104,6 +104,7 @@ export default function LoadingAnimation({
                 className="transition-all duration-300 ease-out sm:stroke-[3.5] md:stroke-4"
               />
               <defs>
+                {" "}
                 <linearGradient
                   id="gradient"
                   x1="0%"
@@ -113,7 +114,7 @@ export default function LoadingAnimation({
                 >
                   <stop offset="0%" stopColor="#a280ec" />
                   <stop offset="50%" stopColor="#d30de5" />
-                  <stop offset="100%" stopColor="#234567" />
+                  <stop offset="100%" stopColor="#18d6ed" />
                 </linearGradient>
               </defs>
             </svg>

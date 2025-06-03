@@ -15,8 +15,7 @@ export default function LoadingWrapper({
 
   useEffect(() => {
     // Simulate content loading
-    const timer = setTimeout(() => {
-    }, 1000);
+    const timer = setTimeout(() => {}, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,15 +27,15 @@ export default function LoadingWrapper({
   const showLoading = isLoading;
   return (
     <>
+      {" "}
       {/* Show main content only when loading is complete */}
       <div
-        className={`transition-opacity duration-500 ${
+        className={`transition-opacity duration-500 bg-gray-900 ${
           showLoading ? "opacity-90" : "opacity-100 "
         }`}
       >
         {children}
       </div>
-
       {/* Full-screen loading overlay */}
       {showLoading && (
         <LoadingAnimation
