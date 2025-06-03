@@ -7,11 +7,11 @@ interface LoadingAnimationProps {
 }
 
 const loadingMessages = [
-  "Initializing quantum processors...",
-  "Loading neural networks...",
-  "Syncing with the matrix...",
-  "Preparing hackathon arena...",
-  "Almost ready to hack the future!",
+  "Initializing HackElite systems...",
+  "Loading innovative minds...",
+  "Preparing the coding battlefield...",
+  "Syncing with elite hackers...",
+  "Ready to hack the future!",
 ];
 
 export default function LoadingAnimation({
