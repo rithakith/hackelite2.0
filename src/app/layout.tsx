@@ -4,6 +4,7 @@ import "./globals.css";
 import AuroraBackground from "@/components/AuroraBackground";
 import { HoverProvider } from "@/context/HoverContext";
 import Navbar from "@/components/Navbar";
+import LoadingWrapper from "@/components/LoadingWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,11 +71,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased min-h-screen`}
       >
         <HoverProvider>
-          <div className="relative min-h-screen w-full overflow-hidden">
-            <AuroraBackground />
-            <Navbar />
-            <main className="relative z-10 pt-20">{children}</main>
-          </div>
+          <LoadingWrapper>
+            <div className="relative min-h-screen w-full overflow-hidden">
+              <AuroraBackground />
+              <Navbar />
+              <main className="relative z-10 pt-20">{children}</main>
+            </div>
+          </LoadingWrapper>
         </HoverProvider>
       </body>
     </html>
