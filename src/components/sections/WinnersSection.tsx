@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const winners = [
   {
     place: "1st",
+    placeLabel: "Champions",
     team: "TechTitans",
     university: "National University of Business Management",
     project: "EcoTrack - Smart Waste Management",
@@ -18,6 +19,7 @@ const winners = [
   },
   {
     place: "2nd",
+    placeLabel: "1st Runners Up",
     team: "SyntaxError404",
     university: "University of Moratuwa",
     project: "HealthBridge - Telemedicine Platform",
@@ -31,6 +33,7 @@ const winners = [
   },
   {
     place: "3rd",
+    placeLabel: "2nd Runners Up",
     team: "CodeBlaze",
     university: "University of Moratuwa",
     project: "AgriSmart - IoT Farming Solutions",
@@ -104,13 +107,13 @@ export default function WinnersSection() {
                     >
                       {crownEmojis[index]}
                     </div>
-                  </div>
+                  </div>{" "}
                   {/* Place Badge */}
                   <div className="absolute top-4 right-4">
                     <div
                       className={`px-3 py-1 rounded-full text-sm font-bold bg-gradient-to-r ${winner.gradient} text-black`}
                     >
-                      {winner.place} Place
+                      {winner.placeLabel}
                     </div>
                   </div>{" "}
                   {/* Team Image */}
@@ -164,13 +167,13 @@ export default function WinnersSection() {
                         >
                           {crownEmojis[index]}
                         </div>
-                      </div>
+                      </div>{" "}
                       {/* Place Badge */}
                       <div className="absolute lg:top-4  right-4">
                         <div
                           className={`px-3 py-1 mt-4 rounded-full text-sm font-bold bg-gradient-to-r ${winner.gradient} text-black`}
                         >
-                          {winner.place} Place
+                          {winner.placeLabel}
                         </div>
                       </div>
                       {/* Team Image */}
@@ -263,7 +266,6 @@ export default function WinnersSection() {
             </div>
 
             {/* Mobile Swipe Indicator */}
-          
           </div>
         </div>
         {/* Call to Action */}

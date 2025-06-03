@@ -6,7 +6,7 @@ const teamMembers = [
   {
     id: 1,
     name: "Vishwani Bhagya",
-    title: "Chairperson of IEEE WIE Affinity Group University of Moratuwa",
+    title: "Chairperson of IEEE WIE Student Branch Affinity Group University of Moratuwa",
     image: "/team/vishwani.png", // You'll need to add team member images
     linkedin: "https://www.linkedin.com/in/vishwani-bhagya/",
     email: "vishwanibhagya@ieee.org",
@@ -15,7 +15,7 @@ const teamMembers = [
   {
     id: 2,
     name: "Rithara Kithmanthie",
-    title: "Vice-Chairperson of IEEE WIE Affinity Group University of Moratuwa",
+    title: "Vice-Chairperson of IEEE WIE Student Branch Affinity Group University of Moratuwa",
     image: "/team/rithara.png", // You'll need to add team member images
     linkedin: "https://www.linkedin.com/in/ritharak/",
     email: "ritharakithmanthie@ieee.org",
@@ -24,7 +24,7 @@ const teamMembers = [
   {
     id: 3,
     name: "Nilupulee Amarathunga",
-    title: "Secretary of IEEE WIE Affinity Group University of Moratuwa",
+    title: "Secretary of IEEE WIE Student Branch Affinity Group University of Moratuwa",
     image: "/team/nilupulee.png", // You'll need to add team member images
     linkedin: "https://www.linkedin.com/in/nilupulee-amarathunga-637710222/",
     email: "nilupuleeamarathunga@ieee.org",

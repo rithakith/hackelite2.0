@@ -6,7 +6,7 @@ const faqs = [
     id: 1,
     question: "What is HackElite 2.0?",
     answer:
-      "HackElite 2.0 is a prestigious hackathon that brings together innovative minds to solve real-world problems through technology. It's a platform for participants to showcase their skills, learn from experts, and transform ideas into impactful solutions.",
+      "HackElite 2.0 is a prestigious innovation competition that brings together talented minds to solve real-world problems using technology. It serves as a platform for participants to showcase their skills, learn from experts, and transform ideas into impactful solutions.",
   },
   {
     id: 2,
@@ -55,7 +55,7 @@ const faqs = [
     id: 9,
     question: "Do you issue certificates for all participants?",
     answer:
-      "Yes, we issue e-certificates to all participants as recognition of their participation and contribution to the event.",
+      "Yes, we issue certificates to all participants, recognizing their valuable participation and achievements based on the phase they reach in the competition. of their participation and contribution to the event.",
   },
 ];
 

@@ -1,10 +1,47 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useHover } from "@/context/HoverContext";
 
 export default function HeroSection() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const { setIsHovering } = useHover();
+
+  // Glitch text variations
+  const originalText = "Glitch the Norm. Build the future";
+  const glitchVariations = [
+    "Gl1tch th3 N0rm. Bu1ld th3 futur3",
+    "Glitch the Norm. Build the future",
+    "G1itch the Norm. Bui1d the future",
+    "Glitch th3 Norm. Build th3 futur3",
+    "Gl1tch the N0rm. Bu1ld the future",
+    "Glitch the Norm. Bu1ld th3 future",
+    "G1itch th3 N0rm. Build the futur3",
+  ];
+
+  const [currentText, setCurrentText] = useState(originalText);
+  const [isGlitching, setIsGlitching] = useState(false);
+
+  useEffect(() => {
+    const glitchInterval = setInterval(() => {
+      setIsGlitching(true);
+
+      // Rapid glitch effect
+      let glitchCount = 0;
+      const rapidGlitch = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * glitchVariations.length);
+        setCurrentText(glitchVariations[randomIndex]);
+        glitchCount++;
+
+        if (glitchCount >= 5) {
+          clearInterval(rapidGlitch);
+          setCurrentText(originalText);
+          setIsGlitching(false);
+        }
+      }, 100);
+    }, 3000);
+
+    return () => clearInterval(glitchInterval);
+  }, []);
 
   return (
     <div className="relative">
@@ -14,10 +51,30 @@ export default function HeroSection() {
           {" "}
           <h1 className="lg:text-8xl text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-center font-orbitron">
             Hackelite 2.0
-          </h1>
-          <p className="text-white text-xl text-center max-w-2xl mx-auto opacity-90">
-            Unleash your potential at the ultimate competitive coding arena
+          </h1>{" "}
+          <p
+            className={`text-3xl text-center max-w-2xl mx-auto font-bold transition-all font-orbitron duration-200 ${
+              isGlitching ? "animate-pulse" : ""
+            }`}
+            style={{
+              color: isGlitching ? "white" : "#CEA2FD",
+              backgroundImage: isGlitching
+                ? "none"
+                : "linear-gradient(90deg, #a280ec, #d30de5, #18d6ed)",
+              WebkitBackgroundClip: isGlitching ? "unset" : "text",
+              backgroundClip: isGlitching ? "unset" : "text",
+              textDecorationColor: isGlitching ? "#d30de5" : "transparent",
+              textUnderlineOffset: "8px",
+              textDecorationThickness: "3px",
+              textShadow: isGlitching
+                ? "0 0 10px #a280ec, 0 0 20px #d30de5"
+                : "none",
+              filter: isGlitching ? "brightness(1.1)" : "none",
+            }}
+          >
+            {currentText}
           </p>
+        
         </div>
 
         <div className="flex flex-row gap-2 lg:gap-6 items-center">
