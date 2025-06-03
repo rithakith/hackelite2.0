@@ -23,10 +23,10 @@ export default function AuroraBackground() {
     const canvasHeight = canvas.height;
     const centerX = canvasWidth * 0.5;
     const centerY = canvasHeight * 0.5;
-    const numberOfStars = 500;
+    const numberOfStars = 1000;
     const stars: Star[] = [];
 
-    let currentSpeedMultiplier = 10;
+    let currentSpeedMultiplier = 2;
 
     const frames_per_second = 60;
     const interval = Math.floor(1000 / frames_per_second);
@@ -51,7 +51,7 @@ export default function AuroraBackground() {
         this.originalY = this.y;
         this.counter = getRandomInt(1, canvasWidth);
         this.radiusMax = 1 + Math.random() * 10;
-        this.speed = getRandomInt(10, 50);
+        this.speed = getRandomInt(1,5);
         this.color = starColors[Math.floor(Math.random() * starColors.length)];
       }
 
@@ -65,7 +65,7 @@ export default function AuroraBackground() {
           this.originalX = this.x;
           this.originalY = this.y;
           this.radiusMax = getRandomInt(1, 10);
-          this.speed = getRandomInt(1, 5);
+          this.speed = getRandomInt(1,5);
           this.color =
             starColors[Math.floor(Math.random() * starColors.length)];
         }
@@ -127,9 +127,9 @@ export default function AuroraBackground() {
 
         ctx.translate(centerX, centerY); // Smoothly transition speed
         if (isHovering) {
-          currentSpeedMultiplier = 10; // Increased speed
+          currentSpeedMultiplier =10; // Increased speed
         } else {
-          currentSpeedMultiplier = 0.1;
+          currentSpeedMultiplier = 2;
         }
 
         stars.forEach((star) => star.draw(ctx, currentSpeedMultiplier));
