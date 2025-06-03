@@ -58,7 +58,7 @@ export default function AboutSection() {
               </h2>
               <p className="text-white/90 lg:text-lg text-md leading-relaxed lg:text-left text-center">
                 HackElite is the flagship competitive innovation challenge
-                organized by the IEEE WIE Student Branch Affinity group of
+                organized by the IEEE WIE Student Branch Affinity Group of
                 University of Moratuwa. Building on the success of HackElite
                 1.0, this year&apos;s competition aims to push the boundaries of
                 technological innovation even further.
