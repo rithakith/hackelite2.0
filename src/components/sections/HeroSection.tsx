@@ -73,7 +73,6 @@ export default function HeroSection() {
           >
             {currentText}
           </p>
-        
         </div>
 
         <div className="flex flex-row gap-2 lg:gap-6 items-center mt-8">
