@@ -55,7 +55,7 @@ const faqs = [
     id: 9,
     question: "Do you issue certificates for all participants?",
     answer:
-      "Yes, we issue certificates to all participants, recognizing their valuable participation and achievements based on the phase they reach in the competition. of their participation and contribution to the event.",
+      "Yes, we issue certificates to all participants, recognizing their valuable participation and achievements based on the phase they reach in the competition.",
   },
 ];
 

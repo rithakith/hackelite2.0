@@ -7,7 +7,7 @@ const winners = [
     place: "1st",
     placeLabel: "Champions",
     team: "TechTitans",
-    university: "National University of Business Management",
+    university: "National Institute of Business Management",
     project: "EcoTrack - Smart Waste Management",
     image: "/winners/firstplace.png",
     prize: "Rs. 500,000",

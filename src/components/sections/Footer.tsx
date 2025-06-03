@@ -85,7 +85,7 @@ const Footer = () => {
                     />
                   </svg>
                   <a
-                    href="mailto:contact@hackelite.com"
+                    href="mailto:ieeewieuom@gmail.com"
                     className="hover:text-[#b146e4] transition-colors"
                   >
                     ieeewieuom@gmail.com
