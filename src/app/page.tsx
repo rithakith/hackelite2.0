@@ -20,7 +20,7 @@ export default function Home() {
 
       <AboutSection />
       <PhasesSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <TimelineSection />
       <WinnersSection />
             <GallerySection />

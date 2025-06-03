@@ -10,7 +10,7 @@ const stats = [
   {
     id: 2,
     title: "Universities",
-    value: "26",
+    value: "15+",
     description: "Leading Universities",
   },
   {
