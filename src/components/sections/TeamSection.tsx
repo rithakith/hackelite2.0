@@ -101,7 +101,7 @@ const TeamSection = () => {
           Meet Our Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member) => (
             <div
               key={member.id}
               className="group relative p-6 rounded-xl backdrop-blur-md border border-white/10 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 hover:border-[#b146e4]/50 hover:shadow-lg hover:shadow-[#a280ec]/20 hover:scale-105 transition-all duration-300"
