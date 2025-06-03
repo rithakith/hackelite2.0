@@ -173,7 +173,7 @@ const GallerySection = () => {
         <div className="hidden md:block space-y-6">
           {/* First row - 4 images */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {firstRow.map((image, index) => (
+            {firstRow.map((image ) => (
               <div
                 key={image.id}
                 className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer"
@@ -197,7 +197,7 @@ const GallerySection = () => {
           </div>{" "}
           {/* Second row - 3 centered images */}
           <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {secondRow.map((image, index) => (
+            {secondRow.map((image) => (
               <div
                 key={image.id}
                 className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer"

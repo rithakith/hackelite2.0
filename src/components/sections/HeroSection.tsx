@@ -20,7 +20,6 @@ export default function HeroSection() {
 
   const [currentText, setCurrentText] = useState(originalText);
   const [isGlitching, setIsGlitching] = useState(false);
-
   useEffect(() => {
     const glitchInterval = setInterval(() => {
       setIsGlitching(true);
@@ -41,7 +40,7 @@ export default function HeroSection() {
     }, 3000);
 
     return () => clearInterval(glitchInterval);
-  }, []);
+  }, [glitchVariations, originalText]);
 
   return (
     <div className="relative">

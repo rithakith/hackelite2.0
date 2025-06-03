@@ -6,6 +6,14 @@ interface LoadingAnimationProps {
   duration?: number;
 }
 
+const loadingMessages = [
+  "Initializing quantum processors...",
+  "Loading neural networks...",
+  "Syncing with the matrix...",
+  "Preparing hackathon arena...",
+  "Almost ready to hack the future!",
+];
+
 export default function LoadingAnimation({
   onComplete,
   duration = 3000,
@@ -13,15 +21,6 @@ export default function LoadingAnimation({
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [currentMessage, setCurrentMessage] = useState(0);
-
-  const loadingMessages = [
-    "Initializing quantum processors...",
-    "Loading neural networks...",
-    "Syncing with the matrix...",
-    "Preparing hackathon arena...",
-    "Almost ready to hack the future!",
-  ];
-
   useEffect(() => {
     const startTime = Date.now();
     const timer = setInterval(() => {
@@ -46,7 +45,7 @@ export default function LoadingAnimation({
     }, 16); // 60fps
 
     return () => clearInterval(timer);
-  }, [onComplete, duration]);
+  }, [onComplete, duration, loadingMessages.length]);
 
   return (
     <div

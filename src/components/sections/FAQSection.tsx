@@ -103,7 +103,7 @@ const FAQSection = () => {
           Frequently Asked Questions
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq) => (
             <div
               key={faq.id}
               className="group rounded-xl backdrop-blur-md border border-white/10 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 overflow-hidden hover:border-[#b146e4]/50 hover:scale-[1.02] transition-all duration-300"

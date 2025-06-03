@@ -12,12 +12,10 @@ export default function LoadingWrapper({
   minLoadingTime = 2500,
 }: LoadingWrapperProps) {
   const [isLoading, setIsLoading] = useState(true);
-  const [contentLoaded, setContentLoaded] = useState(false);
 
   useEffect(() => {
     // Simulate content loading
     const timer = setTimeout(() => {
-      setContentLoaded(true);
     }, 1000);
 
     return () => clearTimeout(timer);
