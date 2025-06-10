@@ -9,6 +9,7 @@ import TeamSection from "@/components/sections/TeamSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/sections/Footer";
 import WinnersSection from "@/components/sections/WinnersSection";
+import PartnersSection from "@/components/sections/PartnersSection";
 
 export default function Home() {
   const registrationDeadline = "2025-07-01T23:59:59"; // Set your registration deadline here
@@ -16,17 +17,18 @@ export default function Home() {
   return (
     <div className="relative">
       <HeroSection />
-            <CountdownTimer targetDate={registrationDeadline} />
+      <CountdownTimer targetDate={registrationDeadline} />
 
       <AboutSection />
       <PhasesSection />
       <StatsSection />
       <TimelineSection />
       <WinnersSection />
-            <GallerySection />
+      <PartnersSection />
+      <GallerySection />
 
       <FAQSection />
-            <TeamSection />
+      <TeamSection />
 
       <Footer />
     </div>
