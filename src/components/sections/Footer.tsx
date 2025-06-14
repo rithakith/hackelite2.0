@@ -8,9 +8,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 py-12 ">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {" "}
           {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="relative h-24 w-80">
+          <div className="space-y-4 flex flex-col items-center md:items-start">
+            <div className="relative h-24 w-80 max-w-full">
               <Image
                 src="/hackelite_logo.png"
                 alt="HackElite 2.0"
@@ -18,7 +19,7 @@ const Footer = () => {
                 className="object-contain"
               />
             </div>
-            <p className="text-white/60 text-sm text-center">
+            <p className="text-white/60 text-sm text-center md:text-left">
               Transform your ideas into reality at the premier innovation
               challenge of the year
             </p>
