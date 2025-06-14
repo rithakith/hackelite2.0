@@ -303,7 +303,15 @@ export default function WinnersSection() {
             <p className="text-white/90 mb-4 lg:text-3xl text-2xl  font-orbitron">
               Ready to join the next generation of champions?
             </p>{" "}
-            <button className="group relative px-4 sm:px-6 md:px-8 mt-8 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg md:text-xl lg:text-2xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] text-white font-orbitron font-bold rounded-lg sm:rounded-xl overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-[#a280ec]/40 hover:brightness-110 active:scale-95 w-full sm:w-auto">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSdlRoOXepWgbFLA5k_86MOmenl8ga4GoHJI1yqO2HKeGLhpXw/viewform?usp=dialog",
+                  "_blank"
+                )
+              }
+              className="group relative px-4 sm:px-6 md:px-8 mt-8 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg md:text-xl lg:text-2xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] text-white font-orbitron font-bold rounded-lg sm:rounded-xl overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-[#a280ec]/40 hover:brightness-110 active:scale-95 w-full sm:w-auto"
+            >
               {/* Animated background shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
               {/* Pulsing border effect */}

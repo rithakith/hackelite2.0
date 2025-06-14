@@ -144,7 +144,7 @@ export default function LoadingAnimation({
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 animate-shimmer"></div>
             </div>
           </div>
-        </div>
+        </div>{" "}
         {/* Loading Dots */}
         <div className="flex space-x-1.5 sm:space-x-2">
           {[...Array(3)].map((_, i) => (
@@ -154,6 +154,37 @@ export default function LoadingAnimation({
               style={{ animationDelay: `${i * 0.2}s` }}
             />
           ))}
+        </div>
+        {/* Skip Button */}
+        <div className="mt-8">
+          <button
+            onClick={() => {
+              setIsComplete(true);
+              setTimeout(() => {
+                onComplete?.();
+              }, 100);
+            }}
+            className="group relative px-6 py-3 bg-transparent border border-white/20 text-white/80 font-orbitron text-sm rounded-full hover:border-[#a280ec]/50 hover:text-white transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              Enter Now
+              <svg
+                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </span>
+            {/* Hover glow effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#a280ec]/20 via-[#d30de5]/20 to-[#18d6ed]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+          </button>
         </div>
       </div>
       {/* Custom Styles */}

@@ -69,7 +69,7 @@ export default function PartnersSection() {
 
         {/* Partners Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {partners.map((partner ) => (
+          {partners.map((partner) => (
             <div key={partner.name} className="group relative">
               {/* Partner Card */}
               <div
@@ -146,8 +146,16 @@ export default function PartnersSection() {
             <p className="text-white/80 mb-6 max-w-md mx-auto">
               Join us in empowering the next generation of innovators and tech
               leaders.
-            </p>
-            <button className="group relative px-6 py-3 bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] text-white font-orbitron font-bold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#a280ec]/40">
+            </p>{" "}
+            <button
+              onClick={() => {
+                const teamSection = document.getElementById("team");
+                if (teamSection) {
+                  teamSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="group relative px-6 py-3 bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] text-white font-orbitron font-bold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#a280ec]/40"
+            >
               <span className="relative z-10 flex items-center gap-2">
                 Contact Us
                 <svg

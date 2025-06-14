@@ -92,7 +92,7 @@ const GallerySection = () => {
               "0 0 20px rgba(162, 128, 236, 0.3), 0 0 40px rgba(211, 13, 229, 0.2)",
           }}
         >
-          Event Gallery
+          Hackelite 1.0
         </h2>{" "}
         {/* Mobile Carousel */}
         <div className="md:hidden relative">

@@ -22,57 +22,80 @@ const Navbar = () => {
           <div className="hidden md:block px-8 py-4 rounded-full backdrop-blur-md bg-black/60 border border-white/10">
             <div className="flex items-center gap-6">
               {" "}
-              <Link
-                href="/"
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Home
-              </Link>{" "}
-              <Link
-                href="/#about"
+              </button>{" "}
+              <button
+                onClick={() => {
+                  const section = document.getElementById("about");
+                  if (section) section.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-white/80  font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 About
-              </Link>{" "}
-              <Link
-                href="/#phases"
+              </button>{" "}
+              <button
+                onClick={() => {
+                  const section = document.getElementById("phases");
+                  if (section) section.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-white/80  font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Phases
-              </Link>{" "}
-              <Link
-                href="/#timeline"
+              </button>{" "}
+              <button
+                onClick={() => {
+                  const section = document.getElementById("timeline");
+                  if (section) section.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Timeline
-              </Link>{" "}
-              <Link
-                href="/#gallery"
+              </button>{" "}
+              <button
+                onClick={() => {
+                  const section = document.getElementById("gallery");
+                  if (section) section.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Gallery
-              </Link>{" "}
-              <Link
-                href="/#faq"
+              </button>{" "}
+              <button
+                onClick={() => {
+                  const section = document.getElementById("faq");
+                  if (section) section.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 FAQ
-              </Link>{" "}
-              <Link
-                href="/#team"
+              </button>{" "}
+              <button
+                onClick={() => {
+                  const section = document.getElementById("team");
+                  if (section) section.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-white/80 font-orbitron hover:text-transparent hover:font-bold hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#a280ec] hover:via-[#d30de5] hover:to-[#18d6ed] transition-all duration-300 ease-in-out"
               >
                 Team
-              </Link>
+              </button>
             </div>
           </div>{" "}
           {/* Register Button aligned to right */}
-          <Link
-            href="/#register"
+          <button
+            onClick={() =>
+              window.open(
+                "https://docs.google.com/forms/d/e/1FAIpQLSdlRoOXepWgbFLA5k_86MOmenl8ga4GoHJI1yqO2HKeGLhpXw/viewform?usp=dialog",
+                "_blank"
+              )
+            }
             className="lg:px-6 px-4 text-center lg:text-lg text-sm py-2 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 hover:scale-105 hover:font-bold transition-all duration-300 ease-in-out transform"
           >
             Register Now
-          </Link>
+          </button>
           {/* Mobile Menu Button */}
           <button className="hidden text-white p-2">
             <svg

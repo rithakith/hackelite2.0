@@ -76,7 +76,7 @@ export default function HeroSection() {
         </div>
 
         <div className="flex flex-row gap-2 lg:gap-6 items-center mt-8">
-          {/* Register Button with star animation */}
+          {/* Register Button with star animation */}{" "}
           <button
             ref={buttonRef}
             onMouseEnter={() => setIsHovering(true)}
@@ -86,18 +86,27 @@ export default function HeroSection() {
                      hover:scale-105 transition-all duration-300 
                      shadow-lg 
                      border border-opacity-20 border-white backdrop-blur-sm"
-            onClick={() => (window.location.href = "/register")}
+            onClick={() =>
+              window.open(
+                "https://docs.google.com/forms/d/e/1FAIpQLSdlRoOXepWgbFLA5k_86MOmenl8ga4GoHJI1yqO2HKeGLhpXw/viewform?usp=dialog",
+                "_blank"
+              )
+            }
           >
             Register Now
-          </button>
-
+          </button>{" "}
           {/* Delegate Booklet Button - different style */}
           <button
             className="lg:px-10 px-4 py-3 bg-transparent border-2 border-white
                      text-white font-bold text-sm lg:text-xl rounded-full 
                      hover:bg-white hover:text-black transition-all duration-300
                      shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-            onClick={() => (window.location.href = "/delegate-booklet")}
+            onClick={() =>
+              window.open(
+                "https://www.canva.com/design/DAGoYWlH9sI/US2wjR9wsg2L5gcijxh8UA/edit?utm_content=DAGoYWlH9sI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+                "_blank"
+              )
+            }
           >
             Delegate Booklet
           </button>
