@@ -45,7 +45,7 @@ export default function LoadingAnimation({
     }, 16); // 60fps
 
     return () => clearInterval(timer);
-  }, [onComplete, duration, loadingMessages.length]);
+  }, [onComplete, duration]);
 
   return (
     <div
