@@ -12,7 +12,7 @@ import WinnersSection from "@/components/sections/WinnersSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 
 export default function Home() {
-  const registrationDeadline = "2025-07-01T23:59:59"; // Set your registration deadline here
+  const registrationDeadline = "2025-07-16T23:59:59"; // Set your registration deadline here
 
   return (
     <div className="relative">
