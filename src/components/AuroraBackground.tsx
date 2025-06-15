@@ -12,19 +12,44 @@ export default function AuroraBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
+    let canvasWidth: number;
+    let canvasHeight: number;
+    let centerX: number;
+    let centerY: number;
 
-    const canvasWidth = canvas.width;
-    const canvasHeight = canvas.height;
-    const centerX = canvasWidth * 0.5;
-    const centerY = canvasHeight * 0.5;
+    const resizeCanvas = () => {
+      // Fix for mobile viewport height issues
+      const vw = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
+      const vh = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      );
+
+      canvas.width = vw;
+      canvas.height = vh;
+
+      canvasWidth = canvas.width;
+      canvasHeight = canvas.height;
+      centerX = canvasWidth * 0.5;
+      centerY = canvasHeight * 0.5;
+
+      // Regenerate mobile positions when canvas is resized
+      if (stars.length > 0) {
+        stars.forEach((star) => {
+          star.mobileX = Math.random() * canvasWidth;
+          star.mobileY = Math.random() * canvasHeight;
+        });
+      }
+    };
+
     const numberOfStars = 1000;
     const stars: Star[] = [];
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
     let currentSpeedMultiplier = 2;
 
@@ -43,51 +68,57 @@ export default function AuroraBackground() {
       color: string;
       originalX: number;
       originalY: number;
+      mobileX: number;
+      mobileY: number;
 
       constructor() {
         this.x = getRandomInt(-centerX, centerX);
         this.y = getRandomInt(-centerY, centerY);
         this.originalX = this.x;
         this.originalY = this.y;
-        this.counter = getRandomInt(1, canvasWidth);
+        // Use canvas dimensions instead of window dimensions for mobile positioning
+        this.mobileX = Math.random() * canvasWidth;
+        this.mobileY = Math.random() * canvasHeight;
+        this.counter = getRandomInt(1, window.innerWidth);
         this.radiusMax = 1 + Math.random() * 10;
-        this.speed = getRandomInt(1,5);
+        this.speed = getRandomInt(1, 5);
         this.color = starColors[Math.floor(Math.random() * starColors.length)];
       }
-
       draw(context: CanvasRenderingContext2D, speedMultiplier: number) {
-        this.counter -= this.speed * speedMultiplier;
+        const isSmallScreen = window.innerWidth < 768;
 
-        if (this.counter < 1) {
-          this.counter = canvasWidth;
-          this.x = getRandomInt(-centerX, centerX);
-          this.y = getRandomInt(-centerY, centerY);
-          this.originalX = this.x;
-          this.originalY = this.y;
-          this.radiusMax = getRandomInt(1, 10);
-          this.speed = getRandomInt(1,5
-            
-          );
-          this.color =
-            starColors[Math.floor(Math.random() * starColors.length)];
+        if (!isSmallScreen) {
+          this.counter -= this.speed * speedMultiplier;
+
+          if (this.counter < 1) {
+            this.counter = canvasWidth;
+            this.x = getRandomInt(-centerX, centerX);
+            this.y = getRandomInt(-centerY, centerY);
+            this.originalX = this.x;
+            this.originalY = this.y;
+            this.radiusMax = getRandomInt(1, 10);
+            this.speed = getRandomInt(1, 5);
+            this.color =
+              starColors[Math.floor(Math.random() * starColors.length)];
+          }
+
+          this.x += (this.originalX - this.x) * 0.05;
+          this.y += (this.originalY - this.y) * 0.05;
+
+          const xRatio = this.x / this.counter;
+          const yRatio = this.y / this.counter;
+
+          const starX = remap(xRatio, 0, 1, 0, canvasWidth);
+          const starY = remap(yRatio, 0, 1, 0, canvasHeight);
+          const radius = remap(this.counter, 0, canvasWidth, this.radiusMax, 0);
+
+          context.beginPath();
+          context.arc(starX, starY, radius, 0, Math.PI * 2, false);
+          context.closePath();
+          context.fillStyle = this.color;
+          context.fill();
         }
-
-        // Always gradually return to original position
-        this.x += (this.originalX - this.x) * 0.05;
-        this.y += (this.originalY - this.y) * 0.05;
-
-        const xRatio = this.x / this.counter;
-        const yRatio = this.y / this.counter;
-
-        const starX = remap(xRatio, 0, 1, 0, canvasWidth);
-        const starY = remap(yRatio, 0, 1, 0, canvasHeight);
-        const radius = remap(this.counter, 0, canvasWidth, this.radiusMax, 0);
-
-        context.beginPath();
-        context.arc(starX, starY, radius, 0, Math.PI * 2, false);
-        context.closePath();
-        context.fillStyle = this.color;
-        context.fill();
+        // Mobile: No stars - removed the else block completely
       }
     }
 
@@ -103,7 +134,6 @@ export default function AuroraBackground() {
       if (deltaTime > interval && ctx) {
         previousTime = currentTime - (deltaTime % interval);
 
-        // Create gradient overlay for glassmorphism effect
         const glassGradient = ctx.createLinearGradient(
           0,
           0,
@@ -117,7 +147,6 @@ export default function AuroraBackground() {
         ctx.fillStyle = glassGradient;
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-        // Add subtle noise texture
         const noise = ctx.createImageData(canvasWidth, canvasHeight);
         const buffer = new Uint32Array(noise.data.buffer);
         for (let i = 0; i < buffer.length; i++) {
@@ -127,12 +156,9 @@ export default function AuroraBackground() {
         }
         ctx.putImageData(noise, 0, 0);
 
-        ctx.translate(centerX, centerY); // Smoothly transition speed
-        if (isHovering) {
-          currentSpeedMultiplier =10; // Increased speed
-        } else {
-          currentSpeedMultiplier = 2;
-        }
+        ctx.translate(centerX, centerY);
+
+        currentSpeedMultiplier = isHovering ? 10 : 2;
 
         stars.forEach((star) => star.draw(ctx, currentSpeedMultiplier));
 
@@ -166,7 +192,6 @@ export default function AuroraBackground() {
 
   return (
     <>
-      {/* Multiple layers for enhanced glassmorphism */}
       <div className="fixed top-0 left-0 w-full h-full bg-[#0a0a14] bg-opacity-70 backdrop-blur-md z-0"></div>
       <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/10 to-cyan-500/10 z-0"></div>
       <div className="fixed top-0 left-0 w-full h-full backdrop-filter backdrop-blur-xl z-0"></div>
