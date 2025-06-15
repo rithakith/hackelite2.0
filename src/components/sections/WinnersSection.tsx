@@ -192,19 +192,13 @@ export default function WinnersSection() {
                       {/* Crown/Medal */}
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <div
-                          className={`text-4xl bg-gradient-to-r ${winner.gradient} lg:p-3 p-1 mt-1 rounded-full bg-black/80 backdrop-blur-sm border ${winner.borderColor}`}
+                          className={`text-4xl bg-gradient-to-r ${winner.gradient} lg:p-3 p-3 mt-6 rounded-full bg-black/80 backdrop-blur-sm border ${winner.borderColor}`}
                         >
                           {crownEmojis[index]}
                         </div>
                       </div>{" "}
                       {/* Place Badge */}
-                      <div className="absolute lg:top-4  right-4">
-                        <div
-                          className={`px-3 py-1 mt-4 rounded-full text-sm font-bold bg-gradient-to-r ${winner.gradient} text-black`}
-                        >
-                          {winner.placeLabel}
-                        </div>
-                      </div>
+                 
                       {/* Team Image */}
                       <div className="lg:mt-8 mt-14 mb-6">
                         <div className="w-full h-48 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center mb-4 overflow-hidden relative">
