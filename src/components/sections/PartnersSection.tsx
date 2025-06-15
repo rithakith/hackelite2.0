@@ -76,15 +76,15 @@ export default function PartnersSection() {
                 className={`relative p-8 rounded-2xl backdrop-blur-md border transition-all duration-500 bg-gradient-to-br ${partner.bgGradient} ${partner.borderColor} ${partner.hoverBorder} hover:shadow-2xl ${partner.shadowColor} hover:scale-105 cursor-pointer`}
                 onClick={() => window.open(partner.website, "_blank")}
               >
+                {" "}
                 {/* Tier Badge */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 ">
                   <div
-                    className={`px-4 py-2 rounded-full text-sm font-bold bg-gradient-to-r ${partner.gradient} text-black`}
+                    className={`px-4 py-2 mb-4 rounded-full text-sm font-bold bg-gradient-to-r ${partner.gradient} text-black`}
                   >
                     {partner.tier}
                   </div>
                 </div>
-
                 {/* Partner Logo */}
                 <div className="mb-6 pt-4">
                   <div className="w-full h-32 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center mb-4 overflow-hidden relative">
@@ -97,7 +97,6 @@ export default function PartnersSection() {
                     />
                   </div>
                 </div>
-
                 {/* Partner Info */}
                 <div className="text-center space-y-3">
                   <h3
@@ -129,7 +128,6 @@ export default function PartnersSection() {
                     </div>
                   </div>
                 </div>
-
                 {/* Decorative Elements */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
