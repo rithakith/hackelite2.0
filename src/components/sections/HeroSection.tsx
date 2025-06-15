@@ -100,10 +100,9 @@ export default function HeroSection() {
             className="lg:px-10 px-4 py-3 bg-transparent border-2 border-white
                      text-white font-bold text-sm lg:text-xl rounded-full 
                      hover:bg-white hover:text-black transition-all duration-300
-                     shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-            onClick={() =>
+                     shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"            onClick={() =>
               window.open(
-                "https://www.canva.com/design/DAGoYWlH9sI/US2wjR9wsg2L5gcijxh8UA/edit?utm_content=DAGoYWlH9sI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+                "https://drive.google.com/file/d/1HoS_Jic8rGx-siv0-W30yAfNM4yO65Qx/view",
                 "_blank"
               )
             }
