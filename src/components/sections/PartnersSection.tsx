@@ -2,18 +2,7 @@
 import Image from "next/image";
 
 const partners = [
-  {
-    tier: "Gold Partner",
-    name: "Zone24x7",
-    logo: "/partners/zone24x7.png", // You'll need to add this logo
-    website: "https://zone24x7.com",
-    description: "Leading AI and technology solutions provider",
-    gradient: "from-yellow-400 via-yellow-500 to-yellow-600",
-    bgGradient: "from-yellow-400/20 via-yellow-500/10 to-yellow-600/5",
-    borderColor: "border-yellow-400/50",
-    hoverBorder: "hover:border-yellow-400/80",
-    shadowColor: "hover:shadow-yellow-400/30",
-  },
+ 
   {
     tier: "Gift Partner",
     name: "Accelr",
@@ -25,6 +14,18 @@ const partners = [
     borderColor: "border-purple-400/50",
     hoverBorder: "hover:border-purple-400/80",
     shadowColor: "hover:shadow-purple-400/30",
+  },
+   {
+    tier: "Gold Partner",
+    name: "Zone24x7",
+    logo: "/partners/zone24x7.png", // You'll need to add this logo
+    website: "https://zone24x7.com",
+    description: "Leading AI and technology solutions provider",
+    gradient: "from-yellow-400 via-yellow-500 to-yellow-600",
+    bgGradient: "from-yellow-400/20 via-yellow-500/10 to-yellow-600/5",
+    borderColor: "border-yellow-400/50",
+    hoverBorder: "hover:border-yellow-400/80",
+    shadowColor: "hover:shadow-yellow-400/30",
   },
   {
     tier: "Digital Media Partner",

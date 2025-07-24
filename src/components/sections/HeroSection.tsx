@@ -102,7 +102,7 @@ export default function HeroSection() {
                      shadow-lg hover:shadow-xl hover:shadow-white/30"
             onClick={() =>
               window.open(
-                "#",
+                " https://drive.google.com/file/d/1PB8PrdaNZBYjIu5iJdkkPXUD-EzKcrgv/view?usp=sharing",
                 "_blank"
               )
             }
