@@ -1,10 +1,8 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
-import { useHover } from "@/context/HoverContext";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const { setIsHovering } = useHover();
+
 
   // Glitch text variations
   const originalText = "Glitch the Norm. Build the future";
