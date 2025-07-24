@@ -18,7 +18,7 @@ const partners = [
     tier: "Gift Partner",
     name: "Accelr",
     logo: "/partners/accelr.png", // You'll need to add this logo
-    website: "https://www.linkedin.com/company/hacksl/?originalSubdomain=lk",
+    website: "https://accelr.lk/",
     description: "Trusted technology partner in all your needs",
     gradient: "from-purple-400 via-purple-500 to-purple-600",
     bgGradient: "from-purple-400/20 via-purple-500/10 to-purple-600/5",

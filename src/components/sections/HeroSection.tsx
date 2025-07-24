@@ -75,13 +75,14 @@ export default function HeroSection() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center mt-8  w-full max-w-md mx-auto  sm:max-w-none">
-          {/* Delegate Booklet Button - different style */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center mt-8">
+          {/* Delegate Booklet Button */}
           <button
-            className="w-60 sm:w-auto  lg:px-10 px-6 py-3 bg-transparent border-2 border-white
-                     text-white font-bold text-sm lg:text-xl rounded-full 
-                     hover:bg-white hover:text-black transition-all duration-300
-                     shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+            className="relative group w-64 md:w-auto px-8 md:px-10 py-3 md:py-4 
+                     bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] 
+                     text-white font-bold text-base md:text-lg lg:text-xl rounded-full 
+                     transform transition-all duration-300 hover:scale-105
+                     shadow-lg hover:shadow-xl hover:shadow-[#d30de5]/30"
             onClick={() =>
               window.open(
                 "https://drive.google.com/file/d/1HoS_Jic8rGx-siv0-W30yAfNM4yO65Qx/view",
@@ -89,14 +90,18 @@ export default function HeroSection() {
               )
             }
           >
-            Delegate Booklet
+            <span className="relative z-10">Delegate Booklet</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] rounded-full opacity-0 group-hover:opacity-100 blur transition-opacity duration-300"></div>
           </button>
+          
           {/* Submission Guidelines Button */}
           <button
-            className="w-60 sm:w-auto lg:px-10 px-6 py-3 bg-transparent border-2 border-white
-                     text-white font-bold text-sm lg:text-xl rounded-full 
-                     hover:bg-white hover:text-black transition-all duration-300
-                     shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+            className="relative group w-64 md:w-auto px-8 md:px-10 py-3 md:py-4 
+                     bg-transparent border-2 border-white
+                     text-white font-bold text-base md:text-lg lg:text-xl rounded-full 
+                     transform transition-all duration-300 hover:scale-105
+                     hover:bg-white hover:text-black hover:border-transparent
+                     shadow-lg hover:shadow-xl hover:shadow-white/30"
             onClick={() =>
               window.open(
                 "#",
@@ -104,7 +109,7 @@ export default function HeroSection() {
               )
             }
           >
-            Submission Guidelines
+            <span className="relative z-10">Submission Guidelines</span>
           </button>
         </div>
       </div>
