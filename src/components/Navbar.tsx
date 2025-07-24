@@ -18,7 +18,7 @@ const Navbar = () => {
             />
           </div>
           {/* Center Navigation Links with glassmorphism */}{" "}
-          <div className="hidden md:block px-8 py-4 rounded-full backdrop-blur-md bg-black/60 border border-white/10">
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 px-8 py-4 rounded-full backdrop-blur-md bg-black/60 border border-white/10">
             <div className="flex items-center gap-6">
               {" "}
               <button
@@ -84,7 +84,7 @@ const Navbar = () => {
             </div>
           </div>{" "}
           {/* Register Button aligned to right */}
-          <button
+          {/* <button
             onClick={() =>
               window.open(
                 "https://docs.google.com/forms/d/e/1FAIpQLSdlRoOXepWgbFLA5k_86MOmenl8ga4GoHJI1yqO2HKeGLhpXw/viewform?usp=dialog",
@@ -94,7 +94,7 @@ const Navbar = () => {
             className="lg:px-6 px-4 text-center lg:text-lg text-sm py-2 rounded-lg bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white font-medium hover:shadow-lg hover:shadow-[#a280ec]/20 hover:scale-105 hover:font-bold transition-all duration-300 ease-in-out transform"
           >
             Register Now
-          </button>
+          </button> */}
           {/* Mobile Menu Button */}
           <button className="hidden text-white p-2">
             <svg

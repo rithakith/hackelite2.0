@@ -47,7 +47,7 @@ const PhasesSection = () => {
               Phase 1
             </div>
             <h3 className="text-2xl font-bold font-orbitron text-white mt-2 mb-4 min-h-[4rem] flex items-center">
-              Proposal Entry Phase
+              Ideation & Proposal Submission
             </h3>
             <p className="text-white/80 mb-6 text-xl">
               Participants will be provided with a set of domains and are
@@ -61,7 +61,7 @@ const PhasesSection = () => {
               Phase 2
             </div>
             <h3 className="text-2xl font-bold font-orbitron text-white mt-2 mb-4 min-h-[4rem] flex items-center">
-              Product Creation Phase
+Development & Prototype Submission
             </h3>
             <p className="text-white/80 mb-6 text-xl">
               Selected teams from Proposal Entry Phase will move on to the
@@ -75,7 +75,7 @@ const PhasesSection = () => {
               Phase 3
             </div>
             <h3 className="text-2xl font-bold font-orbitron text-white mt-2 mb-4 min-h-[4rem] flex items-center">
-              Pitching Phase
+              Final Presentation & Pitching Phase
             </h3>
             <p className="text-white/80 mb-6 text-xl">
               Selected Finalist teams will present their completed minimal

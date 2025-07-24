@@ -75,29 +75,10 @@ export default function HeroSection() {
           </p>
         </div>
 
-        <div className="flex flex-row gap-2 lg:gap-6 items-center mt-8">
-          {/* Register Button with star animation */}{" "}
-          <button
-            ref={buttonRef}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            className="lg:px-10 px-4   py-3 bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] 
-                     text-white font-bold text-sm lg:text-xl lg:rounded-full rounded-full
-                     hover:scale-105 transition-all duration-300 
-                     shadow-lg 
-                     border border-opacity-20 border-white backdrop-blur-sm"
-            onClick={() =>
-              window.open(
-                "https://docs.google.com/forms/d/e/1FAIpQLSdlRoOXepWgbFLA5k_86MOmenl8ga4GoHJI1yqO2HKeGLhpXw/viewform?usp=dialog",
-                "_blank"
-              )
-            }
-          >
-            Register Now
-          </button>{" "}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center mt-8  w-full max-w-md mx-auto  sm:max-w-none">
           {/* Delegate Booklet Button - different style */}
           <button
-            className="lg:px-10 px-4 py-3 bg-transparent border-2 border-white
+            className="w-60 sm:w-auto  lg:px-10 px-6 py-3 bg-transparent border-2 border-white
                      text-white font-bold text-sm lg:text-xl rounded-full 
                      hover:bg-white hover:text-black transition-all duration-300
                      shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
@@ -109,6 +90,21 @@ export default function HeroSection() {
             }
           >
             Delegate Booklet
+          </button>
+          {/* Submission Guidelines Button */}
+          <button
+            className="w-60 sm:w-auto lg:px-10 px-6 py-3 bg-transparent border-2 border-white
+                     text-white font-bold text-sm lg:text-xl rounded-full 
+                     hover:bg-white hover:text-black transition-all duration-300
+                     shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+            onClick={() =>
+              window.open(
+                "#",
+                "_blank"
+              )
+            }
+          >
+            Submission Guidelines
           </button>
         </div>
       </div>

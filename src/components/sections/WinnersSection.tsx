@@ -292,51 +292,7 @@ export default function WinnersSection() {
           </div>
         </div>{" "}
         {/* Call to Action */}
-        <div className="text-center mt-36">
-          <div className="inline-block p-12 backdrop-blur-md bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 rounded-2xl border border-white/10">
-            <p className="text-white/90 mb-4 lg:text-3xl text-2xl  font-orbitron">
-              Ready to join the next generation of champions?
-            </p>{" "}
-            <button
-              onClick={() =>
-                window.open(
-                  "https://docs.google.com/forms/d/e/1FAIpQLSdlRoOXepWgbFLA5k_86MOmenl8ga4GoHJI1yqO2HKeGLhpXw/viewform?usp=dialog",
-                  "_blank"
-                )
-              }
-              className="group relative px-4 sm:px-6 md:px-8 mt-8 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg md:text-xl lg:text-2xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] text-white font-orbitron font-bold rounded-lg sm:rounded-xl overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-[#a280ec]/40 hover:brightness-110 active:scale-95 w-full sm:w-auto"
-            >
-              {/* Animated background shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-              {/* Pulsing border effect */}
-              <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
-              <div className="absolute inset-[2px] rounded-lg sm:rounded-xl bg-gradient-to-r from-[#a280ec] via-[#b146e4] to-[#18d6ed]" />{" "}
-              {/* Button content */}
-              <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2 group-hover:text-white transition-colors duration-300">
-                <span className="text-center">Register for HackElite 2.0</span>
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-500 ease-out animate-pulse group-hover:animate-none flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  style={{
-                    animationDuration: "2s",
-                    animationIterationCount: "infinite",
-                  }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
-              </span>
-              {/* Glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#a280ec]/20 via-[#b146e4]/20 to-[#18d6ed]/20 rounded-lg sm:rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </button>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

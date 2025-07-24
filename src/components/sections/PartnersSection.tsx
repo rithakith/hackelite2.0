@@ -15,6 +15,18 @@ const partners = [
     shadowColor: "hover:shadow-yellow-400/30",
   },
   {
+    tier: "Gift Partner",
+    name: "Accelr",
+    logo: "/partners/accelr.png", // You'll need to add this logo
+    website: "https://www.linkedin.com/company/hacksl/?originalSubdomain=lk",
+    description: "Trusted technology partner in all your needs",
+    gradient: "from-purple-400 via-purple-500 to-purple-600",
+    bgGradient: "from-purple-400/20 via-purple-500/10 to-purple-600/5",
+    borderColor: "border-purple-400/50",
+    hoverBorder: "hover:border-purple-400/80",
+    shadowColor: "hover:shadow-purple-400/30",
+  },
+  {
     tier: "Digital Media Partner",
     name: "HackSL",
     logo: "/partners/hacksl.png", // You'll need to add this logo
@@ -68,7 +80,7 @@ export default function PartnersSection() {
         </div>
 
         {/* Partners Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {partners.map((partner) => (
             <div key={partner.name} className="group relative">
               {/* Partner Card */}
@@ -80,13 +92,13 @@ export default function PartnersSection() {
                 {/* Tier Badge */}
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2 ">
                   <div
-                    className={`px-4 py-2 mb-4 rounded-full text-sm font-bold bg-gradient-to-r ${partner.gradient} text-black`}
+                    className={`px-4 py-2 mb-4 rounded-full text-sm font-bold text-center bg-gradient-to-r ${partner.gradient} text-black`}
                   >
                     {partner.tier}
                   </div>
                 </div>
                 {/* Partner Logo */}
-                <div className="mb-6 pt-4">
+                <div className="mt-6 mb-6 pt-4">
                   <div className="w-full h-32 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center mb-4 overflow-hidden relative">
                     <Image
                       src={partner.logo}

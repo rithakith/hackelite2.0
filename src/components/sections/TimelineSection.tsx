@@ -12,15 +12,16 @@ const timeline = [
   {
     id: 2,
     date: "June 15, 2025",
-    title: "Ideation Phase Launch",
+    title: "Ideation",
     description:
       "Time to unleash your creativity! Teams dive deep into brainstorming, refining groundbreaking ideas, and exploring innovative solutions to tackle real-world challenges.",
     icon: "💡",
+    isActive: true,
   },
   {
     id: 3,
     date: "July 1, 2025",
-    title: "Prototype Development Begins",
+    title: "Development & Prototype Submission",
     description:
       "From ideas to implementation! Teams start building functional prototypes, turning their visions into tangible solutions that showcase their potential to revolutionize industries.",
     icon: "🔧",
@@ -28,7 +29,7 @@ const timeline = [
   {
     id: 4,
     date: "July 20, 2025",
-    title: "Technical Pitch Presentations",
+    title: "Final Presentation & Pitching Phase",
     description:
       "The moment of truth arrives! Teams present their prototypes to expert judges, receive valuable feedback, and compete for advancement to the final stage.",
     icon: "🎯",
@@ -101,12 +102,17 @@ const TimelineSection = () => {
                     </div>
                   </div>
 
-                  <div className="p-3 md:p-6 rounded-xl backdrop-blur-md border border-white/10 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10 transition-all duration-300 hover:border-[#b146e4]/50 hover:shadow-lg hover:shadow-[#a280ec]/20 hover:scale-[1.02]">
+                  <div className={`p-3 md:p-6 rounded-xl backdrop-blur-md border ${item.isActive ? 'border-[#d30de5] bg-gradient-to-br from-[#a280ec]/20 via-[#b146e4]/20 to-[#18d6ed]/20' : 'border-white/10 bg-gradient-to-br from-[#a280ec]/10 via-[#b146e4]/10 to-[#18d6ed]/10'} transition-all duration-300 hover:border-[#b146e4]/50 hover:shadow-lg hover:shadow-[#a280ec]/20 hover:scale-[1.02]`}>
                     {/* <div className="text-sm md:text-lg font-bold bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-transparent bg-clip-text">
                       {item.date}
                     </div> */}
                     <h3 className="text-base md:text-xl font-orbitron font-bold text-white mt-1.5 md:mt-2 mb-2 md:mb-3">
                       {item.title}
+                      {item.isActive && (
+                        <span className="block md:inline-block mt-2 md:mt-0 md:ml-2 text-xs bg-gradient-to-r from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-white px-2 py-1 rounded-full">
+                          CURRENT PHASE
+                        </span>
+                      )}
                     </h3>
                     <p className="text-xs md:text-base text-white/80">
                       {item.description}
@@ -115,7 +121,7 @@ const TimelineSection = () => {
                 </div>
 
                 {/* Icon for desktop - shown in center */}
-                <div className="hidden md:flex w-16 h-16 rounded-full items-center justify-center bg-gradient-to-br from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-2xl relative z-10">
+                <div className={`hidden md:flex w-16 h-16 rounded-full items-center justify-center bg-gradient-to-br from-[#a280ec] via-[#d30de5] to-[#18d6ed] text-2xl relative z-10 ${item.isActive ? 'animate-pulse shadow-lg shadow-[#d30de5]/50' : ''}`}>
                   <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center">
                     {item.icon}
                   </div>
