@@ -6,7 +6,7 @@ const partners = [
   {
     tier: "Gift Partner",
     name: "Accelr",
-    logo: "/partners/accelr.png", // You'll need to add this logo
+    logo: "/partners/accelr.jpg", // You'll need to add this logo
     website: "https://accelr.lk/",
     description: "Trusted technology partner in all your needs",
     gradient: "from-purple-400 via-purple-500 to-purple-600",

@@ -53,28 +53,28 @@ const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
           </div>
           
           {/* Workshop Session Card */}
-          <div className="backdrop-blur-lg bg-white/5 rounded-2xl border my-16 border-white/10 shadow-[0_0_50px_rgba(162,128,236,0.15)] p-8">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-[#a280ec] to-[#d30de5] rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Workshop Session 1</span>
+          <div className="backdrop-blur-lg bg-white/5 rounded-2xl border my-16 lg:my-20 border-white/10 shadow-[0_0_50px_rgba(162,128,236,0.15)] p-6 lg:p-6 max-w-3xl mx-auto">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-2 h-2 bg-gradient-to-r from-[#a280ec] to-[#d30de5] rounded-full animate-pulse"></div>
+              <span className="text-xs font-medium text-white/60 uppercase tracking-wider">Workshop Session 1</span>
             </div>
             
-            <h3 className="text-2xl font-orbitron font-bold text-white mb-3">
+            <h3 className="text-lg lg:text-xl font-orbitron font-bold text-white mb-2">
  Towards Autonomous AI Systems
              </h3>
             
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex flex-col  items-start  gap-2 mb-4">
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#a280ec]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#a280ec]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                <span className="text-white/80">Ms. Prashani Jayasingha</span>
+                <div className="text-sm text-white/80">Ms. Prashani Jayasingha</div>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#d30de5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#d30de5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-white/80">1 hr 45 minutes</span>
+                <div className="text-sm text-white/80">1 hr 45 minutes</div>
               </div>
             </div>
             
